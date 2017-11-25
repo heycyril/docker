@@ -1,0 +1,17 @@
+version: '2'
+services:
+   mysql:
+        image: gsy36559067/mysql56:0.1
+        restart: always
+        ports: 
+          - "13334:3306"
+        volumes:
+          - /docker/alpine/gogs/mysqldata-test:/var/lib/mysql
+        container_name: mysql-2
+        environment:
+          MYSQL_DATABASE: gogs
+          MYSQL_ROOT_PASSWORD: guo123.COM
+          character-set-server: utf8
+          collation-server: utf8_general_ci
+          hostname: mydb.server.com
+
