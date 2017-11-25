@@ -1,0 +1,14 @@
+version: '2'
+services:
+   redis:
+      # 指定当前构建的Docker容器的镜像
+      image: gsy36559067/redis32:0.1
+      restart: always
+      # 指定当前构建的Docker容器的名称
+      container_name: redis-0.1
+      # 指定当前构建的Docker容器的volume挂在目录设置
+#      volumes:
+#         - /docker/alpine/nginx/html:/usr/share/nginx/html 
+      # 指定当前构建的Docker容器对外开放的端口号映射
+      ports:
+         - "16379:6379"
