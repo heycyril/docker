@@ -1,1 +1,1 @@
-以上部分是总结，有部分是拉取的，如有感觉不合适的地方，请联系作者QQ:36559067进行删除
+If you need to add or delete, please contact the author QQ: 36559067 to be modified
