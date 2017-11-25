@@ -1,0 +1,18 @@
+version: '2'
+services:
+   jre:
+      # 指定当前构建的Docker容器的镜像
+      image: gsy36559067/jre:0.1
+      restart: always
+      # 指定当前构建的Docker容器的名称
+      container_name: jre-0.1
+      networks:
+         redis_net:
+            # 指定当前构建的Docker容器的IP地址
+            ipv4_address: 172.22.0.3
+      # 指定当前构建的Docker容器的host配置
+      extra_hosts:
+         - "jre-0.1:172.22.0.3"
+      ports:
+         - "10081:22"
+
