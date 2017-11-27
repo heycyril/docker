@@ -1,5 +1,5 @@
 shadowsocks:
-   image: gsy36559067/ss:1.3
+   image: gsy36559067/ss:0.1
    ports: 
      - "60001:60001"
      - "60002:60002"
