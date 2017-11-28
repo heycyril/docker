@@ -20,8 +20,11 @@ shadowsocks-1:
     - "60007:8388"
     - "60008:8388"
     - "60009:8388"
+    
   environment:
     - METHOD=aes-256-cfb
     - PASSWORD=guo123.COM
+    
   restart: always
+  
   container_name: ss-0.1
