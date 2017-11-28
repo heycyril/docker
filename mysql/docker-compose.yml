@@ -1,12 +1,13 @@
 version: '2'
 services:
    mysql:
-        image: gsy36559067/mysql56:0.1
+        image: gsy36559067/mysql:0.1
         restart: always
         ports: 
           - "13334:3306"
         volumes:
           - /docker/alpine/gogs/mysqldata-test:/var/lib/mysql
+          - /docker/docker/mysql/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
         container_name: mysql-2
         environment:
           MYSQL_DATABASE: gogs
