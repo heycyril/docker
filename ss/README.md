@@ -7,7 +7,9 @@ or
 docker-compose
 
 shadowsocks-1:
+
   image: gsy36559067/ss:0.1
+  
   ports:
     - "60001:8388"
     - "60002:8388"
