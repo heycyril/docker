@@ -2,6 +2,7 @@
 Hosting some simple static content
 
 $ docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d nginx
+
 Alternatively, a simple Dockerfile can be used to generate a new image that includes the necessary content (which is a much cleaner solution than the bind mount above):
 
 FROM nginx
@@ -13,11 +14,13 @@ Exposing external port
 
 
 $ docker run --name some-nginx -d -p 8080:80 some-content-nginx
+
 Then you can hit http://localhost:8080 or http://host-ip:8080 in your browser.
 
 Complex configuration
 
 $ docker run --name my-custom-nginx-container -v /host/path/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx
+
 For information on the syntax of the nginx configuration files, see the official documentation (specifically the Beginner's Guide).
 
 If you wish to adapt the default configuration, use something like the following to copy it from a running nginx container:
@@ -36,6 +39,7 @@ If you add a custom CMD in the Dockerfile, be sure to include -g daemon off; in 
 Then build the image with docker build -t custom-nginx . and run it as follows:
 
 $ docker run --name my-custom-nginx-container -d custom-nginx
+
 Using environment variables in nginx configuration
 
 Out-of-the-box, nginx doesn't support environment variables inside most configuration blocks. But envsubst may be used as a workaround if you need to generate your nginx configuration dynamically before nginx starts.
@@ -63,6 +67,8 @@ Running nginx in debug mode
 Images since version 1.9.8 come with nginx-debug binary that produces verbose output when using higher log levels. It can be used with simple CMD substitution:
 
 $ docker run --name my-nginx -v /host/path/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx nginx-debug -g 'daemon off;'
+
+
 Similar configuration in docker-compose.yml may look like this:
 
 web:
