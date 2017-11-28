@@ -1,4 +1,5 @@
 you can 
+
 docker run -d -e METHOD=aes-256-cfb -e PASSWORD=guo123.COM -p 8388:8388 --restart always gsy36559067/ss:0.4
 
 or
