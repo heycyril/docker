@@ -1,41 +1,95 @@
-# Official Jenkins Docker image
+<!--
+
+********************************************************************************
+
+WARNING:
+
+    DO NOT EDIT "jenkins/README.md"
+
+    IT IS AUTO-GENERATED
+
+    (from the other files in "jenkins/" combined with a set of templates)
+
+********************************************************************************
+
+-->
+
+# **DEPRECATION NOTICE**
+
+This image has been deprecated in favor of the [`jenkins/jenkins:lts`](https://hub.docker.com/r/jenkins/jenkins) image provided and maintained by [Jenkins Community](https://jenkins.io/) as part of project's release process. The images found here will receive no further updates after LTS 2.60.x. Please adjust your usage accordingly.
+
+# Supported tags and respective `Dockerfile` links
+
+-	[`latest`, `2.60.3` (*Dockerfile*)](https://github.com/jenkinsci/jenkins-ci.org-docker/blob/587b2856cd225bb152c4abeeaaa24934c75aa460/Dockerfile)
+-	[`alpine`, `2.60.3-alpine` (*Dockerfile*)](https://github.com/jenkinsci/jenkins-ci.org-docker/blob/c2d6f2122fa03c437e139a317b7fe5b9547fe49e/Dockerfile)
+
+# Quick reference
+
+-	**Where to get help**:  
+	[the Docker Community Forums](https://forums.docker.com/), [the Docker Community Slack](https://blog.docker.com/2016/11/introducing-docker-community-directory-docker-community-slack/), or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
+
+-	**Where to file issues**:  
+	[https://github.com/cloudbees/jenkins-ci.org-docker/issues](https://github.com/cloudbees/jenkins-ci.org-docker/issues)
+
+-	**Maintained by**:  
+	[the Jenkins Project](https://github.com/cloudbees/jenkins-ci.org-docker)
+
+-	**Supported architectures**: ([more info](https://github.com/docker-library/official-images#architectures-other-than-amd64))  
+	[`amd64`](https://hub.docker.com/r/amd64/jenkins/)
+
+-	**Published image artifact details**:  
+	[repo-info repo's `repos/jenkins/` directory](https://github.com/docker-library/repo-info/blob/master/repos/jenkins) ([history](https://github.com/docker-library/repo-info/commits/master/repos/jenkins))  
+	(image metadata, transfer size, etc)
+
+-	**Image updates**:  
+	[official-images PRs with label `library/jenkins`](https://github.com/docker-library/official-images/pulls?q=label%3Alibrary%2Fjenkins)  
+	[official-images repo's `library/jenkins` file](https://github.com/docker-library/official-images/blob/master/library/jenkins) ([history](https://github.com/docker-library/official-images/commits/master/library/jenkins))
+
+-	**Source of this description**:  
+	[docs repo's `jenkins/` directory](https://github.com/docker-library/docs/tree/master/jenkins) ([history](https://github.com/docker-library/docs/commits/master/jenkins))
+
+-	**Supported Docker versions**:  
+	[the latest release](https://github.com/docker/docker-ce/releases/latest) (down to 1.6 on a best-effort basis)
+
+# Jenkins
 
 The Jenkins Continuous Integration and Delivery server.
 
-This is a fully functional Jenkins server.
-[http://jenkins.io/](http://jenkins.io/).
+This is a fully functional Jenkins server, based on the Long Term Support release [http://jenkins.io/](http://jenkins.io/).
 
-<img src="http://jenkins-ci.org/sites/default/files/jenkins_logo.png"/>
+For weekly releases check out [`jenkinsci/jenkins`](https://hub.docker.com/r/jenkinsci/jenkins/)
 
+![logo](https://raw.githubusercontent.com/docker-library/docs/3ab4dafb41dd0e959ff9322b3c50af2519af6d85/jenkins/logo.png)
 
-# Usage
+# How to use this image
 
-```
-docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts
-```
-
-NOTE: read below the _build executors_ part for the role of the `50000` port mapping.
-
-This will store the workspace in /var/jenkins_home. All Jenkins data lives in there - including plugins and configuration.
-You will probably want to make that an explicit volume so you can manage it and attach to another container for upgrades :
-
-```
-docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+```console
+docker run -p 8080:8080 -p 50000:50000 jenkins
 ```
 
-this will automatically create a 'jenkins_home' volume on docker host, that will survive container stop/restart/deletion.
+This will store the workspace in /var/jenkins_home. All Jenkins data lives in there - including plugins and configuration. You will probably want to make that a persistent volume (recommended):
 
-Avoid using a bind mount from a folder on host into `/var/jenkins_home`, as this might result in file permission issue. If you _really_ need to bind mount jenkins_home, ensure that directory on host is accessible by the jenkins user in container (jenkins user - uid 1000) or use `-u some_other_user` parameter with `docker run`.
+```console
+docker run -p 8080:8080 -p 50000:50000 -v /your/home:/var/jenkins_home jenkins
+```
+
+This will store the jenkins data in `/your/home` on the host. Ensure that `/your/home` is accessible by the jenkins user in container (jenkins user - uid 1000) or use `-u some_other_user` parameter with `docker run`.
+
+You can also use a volume container:
+
+```console
+docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home jenkins
+```
+
+Then myjenkins container has the volume (please do read about docker volume handling to find out more).
 
 ## Backing up data
 
-If you bind mount in a volume - you can simply back up that directory
-(which is jenkins_home) at any time.
+If you bind mount in a volume - you can simply back up that directory (which is jenkins_home) at any time.
 
 This is highly recommended. Treat the jenkins_home directory as you would a database - in Docker you would generally put a database on a volume.
 
-If your volume is inside a container - you can use ```docker cp $ID:/var/jenkins_home``` command to extract the data, or other options to find where the volume data is.
-Note that some symlinks on some OSes may be converted to copies (this can confuse jenkins with lastStableBuild links etc)
+If your volume is inside a container - you can use `docker cp $ID:/var/jenkins_home` command to extract the data, or other options to find where the volume data is. Note that some symlinks on some OSes may be converted to copies (this can confuse jenkins with lastStableBuild links etc)
 
 For more info check Docker docs section on [Managing data in containers](https://docs.docker.com/engine/tutorials/dockervolumes/)
 
@@ -44,70 +98,57 @@ For more info check Docker docs section on [Managing data in containers](https:/
 You can specify and set the number of executors of your Jenkins master instance using a groovy script. By default its set to 2 executors, but you can extend the image and change it to your desired number of executors :
 
 `executors.groovy`
-```
-import jenkins.model.*
-Jenkins.instance.setNumExecutors(5)
-```
+
+	import jenkins.model.*
+	Jenkins.instance.setNumExecutors(5)
 
 and `Dockerfile`
 
-```
-FROM jenkins/jenkins:lts
+```console
+FROM jenkins
 COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy
 ```
 
-
 # Attaching build executors
 
-You can run builds on the master out of the box.
-
-But if you want to attach build slave servers **through JNLP (Java Web Start)**: make sure you map the port: ```-p 50000:50000``` - which will be used when you connect a slave agent.
-
-If you are only using [SSH slaves](https://wiki.jenkins-ci.org/display/JENKINS/SSH+Slaves+plugin), then you do **NOT** need to put that port mapping.
+You can run builds on the master (out of the box) but if you want to attach build slave servers: make sure you map the port: `-p 50000:50000` - which will be used when you connect a slave agent.
 
 # Passing JVM parameters
 
-You might need to customize the JVM running Jenkins, typically to pass system properties or tweak heap memory settings. Use JAVA_OPTS environment
-variable for this purpose :
+You might need to customize the JVM running Jenkins, typically to pass system properties or tweak heap memory settings. Use JAVA_OPTS environment variable for this purpose :
 
-```
-docker run --name myjenkins -p 8080:8080 -p 50000:50000 --env JAVA_OPTS=-Dhudson.footerURL=http://mycompany.com jenkins/jenkins:lts
+```console
+docker run --name myjenkins -p 8080:8080 -p 50000:50000 --env JAVA_OPTS=-Dhudson.footerURL=http://mycompany.com jenkins
 ```
 
 # Configuring logging
 
-Jenkins logging can be configured through a properties file and `java.util.logging.config.file` Java property.
-For example:
+Jenkins logging can be configured through a properties file and `java.util.logging.config.file` Java property. For example:
 
-```
+```console
 mkdir data
 cat > data/log.properties <<EOF
 handlers=java.util.logging.ConsoleHandler
 jenkins.level=FINEST
 java.util.logging.ConsoleHandler.level=FINEST
 EOF
-docker run --name myjenkins -p 8080:8080 -p 50000:50000 --env JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties" -v `pwd`/data:/var/jenkins_home jenkins/jenkins:lts
+docker run --name myjenkins -p 8080:8080 -p 50000:50000 --env JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties" -v `pwd`/data:/var/jenkins_home jenkins
 ```
-
-# Configuring reverse proxy
-If you want to install Jenkins behind a reverse proxy with prefix, example: mysite.com/jenkins, you need to add environnement variable `JENKINS_OPTS="--prefix=/jenkins"` and then follow the below procedures to configure your reverse proxy, which will depend if you have Apache or Nginx:
-- [Apache](https://wiki.jenkins-ci.org/display/JENKINS/Running+Jenkins+behind+Apache)
-- [Nginx](https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+behind+an+NGinX+reverse+proxy)
 
 # Passing Jenkins launcher parameters
 
-Argument you pass to docker running the jenkins image are passed to jenkins launcher, so you can run for sample :
+Arguments you pass to docker running the jenkins image are passed to jenkins launcher, so you can run for example :
+
+```console
+$ docker run jenkins --version
 ```
-docker run jenkins/jenkins:lts --version
-```
+
 This will dump Jenkins version, just like when you run jenkins as an executable war.
 
-You also can define jenkins arguments as `JENKINS_OPTS`. This is usefull to define a set of arguments to pass to jenkins launcher as you
-define a derived jenkins image based on the official one with some customized settings. The following sample Dockerfile uses this option
-to force use of HTTPS with a certificate included in the image
+You also can define jenkins arguments as `JENKINS_OPTS`. This is useful to define a set of arguments to pass to jenkins launcher as you define a derived jenkins image based on the official one with some customized settings. The following sample Dockerfile uses this option to force use of HTTPS with a certificate included in the image
 
-```
-FROM jenkins/jenkins:lts
+```console
+FROM jenkins:1.565.3
 
 COPY https.pem /var/lib/jenkins/cert
 COPY https.key /var/lib/jenkins/pk
@@ -117,120 +158,58 @@ EXPOSE 8083
 
 You can also change the default slave agent port for jenkins by defining `JENKINS_SLAVE_AGENT_PORT` in a sample Dockerfile.
 
-```
-FROM jenkins/jenkins:lts
+```console
+FROM jenkins:1.565.3
 ENV JENKINS_SLAVE_AGENT_PORT 50001
 ```
+
 or as a parameter to docker,
-```
-docker run --name myjenkins -p 8080:8080 -p 50001:50001 --env JENKINS_SLAVE_AGENT_PORT=50001 jenkins/jenkins:lts
+
+```console
+$ docker run --name myjenkins -p 8080:8080 -p 50001:50001 --env JENKINS_SLAVE_AGENT_PORT=50001 jenkins
 ```
 
 # Installing more tools
 
 You can run your container as root - and install via apt-get, install as part of build steps via jenkins tool installers, or you can create your own Dockerfile to customise, for example:
 
-```
-FROM jenkins/jenkins:lts
+```console
+FROM jenkins
 # if we want to install via apt
 USER root
 RUN apt-get update && apt-get install -y ruby make more-thing-here
-# drop back to the regular jenkins user - good practice
-USER jenkins
+USER jenkins # drop back to the regular jenkins user - good practice
 ```
 
-In such a derived image, you can customize your jenkins instance with hook scripts or additional plugins.
-For this purpose, use `/usr/share/jenkins/ref` as a place to define the default JENKINS_HOME content you
-wish the target installation to look like :
+In such a derived image, you can customize your jenkins instance with hook scripts or additional plugins. For this purpose, use `/usr/share/jenkins/ref` as a place to define the default JENKINS_HOME content you wish the target installation to look like :
 
-```
-FROM jenkins/jenkins:lts
+```console
+FROM jenkins
+COPY plugins.txt /usr/share/jenkins/ref/
 COPY custom.groovy /usr/share/jenkins/ref/init.groovy.d/custom.groovy
+RUN /usr/local/bin/plugins.sh /usr/share/jenkins/ref/plugins.txt
 ```
 
-## Preinstalling plugins
-
-You can rely on the `install-plugins.sh` script to pass a set of plugins to download with their dependencies.
-This script will perform downloads from update centers, an internet access is required for the default update centers.
-
-### Setting update centers
-
-During the download, the script will use update centers defined by the following environment variables:
-
-* `JENKINS_UC` - Main update center.
-  This update center may offer plugin versions depending on the Jenkins LTS Core versions.
-  Default value: https://updates.jenkins.io
-* `JENKINS_UC_EXPERIMENTAL` - [Experimental Update Center](https://jenkins.io/blog/2013/09/23/experimental-plugins-update-center/).
-  This center offers Alpha and Beta versions of plugins.
-  Default value: https://updates.jenkins.io/experimental
-
-It is possible to override the environment variables in images.
-
-:exclamation: Note that changing this variables **will not** change the Update Center being used by Jenkins runtime.
-
-### Plugin version format
-
-Use plugin artifact ID, without `-plugin` extension, and append the version if needed separated by `:`.
-Dependencies that are already included in the Jenkins war will only be downloaded if their required version is newer than the one included.
-
-There are also custom version specifiers:
-
-* `latest` - download the latest version from the main update center.
-  For Jenkins LTS images
-  (example: `git:latest`)
-* `experimental` - download the latest version from the experimental update center defined by the `JENKINS_UC_EXPERIMENTAL` environment variable (example: `filesystem_scm:experimental`)
-
-### Script usage
-
-You can run the script manually in Dockerfile:
-
-```Dockerfile
-FROM jenkins/jenkins:lts
-RUN /usr/local/bin/install-plugins.sh docker-slaves github-branch-source:1.8
-```
-
-Furthermore it is possible to pass a file that contains this set of plugins (with or without line breaks).
-
-```Dockerfile
-FROM jenkins/jenkins:lts
-COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
-```
-
-When jenkins container starts, it will check `JENKINS_HOME` has this reference content, and copy them
-there if required. It will not override such files, so if you upgraded some plugins from UI they won't
-be reverted on next start.
-
-In case you *do* want to override, append '.override' to the name of the reference file. E.g. a file named
-`/usr/share/jenkins/ref/config.xml.override` will overwrite an existing `config.xml` file in JENKINS_HOME.
+When jenkins container starts, it will check JENKINS_HOME has this reference content, and copy them there if required. It will not override such files, so if you upgraded some plugins from UI they won't be reverted on next start.
 
 Also see [JENKINS-24986](https://issues.jenkins-ci.org/browse/JENKINS-24986)
 
+For your convenience, you also can use a plain text file to define plugins to be installed (using core-support plugin format). All plugins need to be listed as there is no transitive dependency resolution.
 
-Here is an example to get the list of plugins from an existing server:
-
-```
-JENKINS_HOST=username:password@myhost.com:port
-curl -sSL "http://$JENKINS_HOST/pluginManager/api/xml?depth=1&xpath=/*/*/shortName|/*/*/version&wrapper=plugins" | perl -pe 's/.*?<shortName>([\w-]+).*?<version>([^<]+)()(<\/\w+>)+/\1 \2\n/g'|sed 's/ /:/'
-```
-
-Example Output:
-
-```
-cucumber-testresult-plugin:0.8.2
-pam-auth:1.1
-matrix-project:1.4.1
-script-security:1.13
+```console
+pluginID:version
+credentials:1.18
+maven-plugin:2.7.1
 ...
 ```
 
-For 2.x-derived images, you may also want to
+And in derived Dockerfile just invoke the utility plugin.sh script
 
-    RUN echo 2.0 > /usr/share/jenkins/ref/jenkins.install.UpgradeWizard.state
-
-to indicate that this Jenkins installation is fully configured.
-Otherwise a banner will appear prompting the user to install additional plugins,
-which may be inappropriate.
+```console
+FROM jenkins
+COPY plugins.txt /usr/share/jenkins/plugins.txt
+RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
+```
 
 # Upgrading
 
@@ -238,25 +217,28 @@ All the data needed is in the /var/jenkins_home directory - so depending on how 
 
 As always - please ensure that you know how to drive docker - especially volume handling!
 
-## Upgrading plugins
+# Image Variants
 
-By default, plugins will be upgraded if they haven't been upgraded manually and if the version from the docker image is newer than the version in the container. Versions installed by the docker image are tracked through a marker file.
+The `jenkins` images come in many flavors, each designed for a specific use case.
 
-The default behaviour when upgrading from a docker image that didn't write marker files is to leave existing plugins in place. If you want to upgrade existing plugins without marker you may run the docker image with `-e TRY_UPGRADE_IF_NO_MARKER=true`. Then plugins will be upgraded if the version provided by the docker image is newer.
+## `jenkins:<version>`
 
-# Building
+This is the defacto image. If you are unsure about what your needs are, you probably want to use this one. It is designed to be used both as a throw away container (mount your source code and start the container to start your app), as well as the base to build other images off of.
 
-Build with the usual
+## `jenkins:alpine`
 
-    docker build -t jenkins/jenkins .
+This image is based on the popular [Alpine Linux project](http://alpinelinux.org), available in [the `alpine` official image](https://hub.docker.com/_/alpine). Alpine Linux is much smaller than most distribution base images (~5MB), and thus leads to much slimmer images in general.
 
-Tests are written using [bats](https://github.com/sstephenson/bats) under the `tests` dir
+This variant is highly recommended when final image size being as small as possible is desired. The main caveat to note is that it does use [musl libc](http://www.musl-libc.org) instead of [glibc and friends](http://www.etalabs.net/compare_libcs.html), so certain software might run into issues depending on the depth of their libc requirements. However, most software doesn't have an issue with this, so this variant is usually a very safe choice. See [this Hacker News comment thread](https://news.ycombinator.com/item?id=10782897) for more discussion of the issues that might arise and some pro/con comparisons of using Alpine-based images.
 
-    DOCKERFILE=Dockerfile bats tests
-    DOCKERFILE=Dockerfile-alpine bats tests
+To minimize image size, it's uncommon for additional related tools (such as `git` or `bash`) to be included in Alpine-based images. Using this image as a base, add the things you need in your own Dockerfile (see the [`alpine` image description](https://hub.docker.com/_/alpine/) for examples of how to install packages if you are unfamiliar).
 
-Bats can be easily installed with `brew install bats` on OS X
+# License
 
-# Questions?
+View [license information](https://jenkins.io/license/) for the software contained in this image.
 
-Jump on irc.freenode.net and the #jenkins room. Ask!
+As with all Docker images, these likely also contain other software which may be under other licenses (such as Bash, etc from the base distribution, along with any direct or indirect dependencies of the primary software being contained).
+
+Some additional license information which was able to be auto-detected might be found in [the `repo-info` repository's `jenkins/` directory](https://github.com/docker-library/repo-info/tree/master/repos/jenkins).
+
+As for any pre-built image usage, it is the image user's responsibility to ensure that any use of this image complies with any relevant licenses for all software contained within.
