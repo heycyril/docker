@@ -11,6 +11,7 @@ Place this file in the same directory as your directory of content ("static-html
 $ docker run --name some-nginx -d some-content-nginx
 Exposing external port
 
+
 $ docker run --name some-nginx -d -p 8080:80 some-content-nginx
 Then you can hit http://localhost:8080 or http://host-ip:8080 in your browser.
 
@@ -24,10 +25,12 @@ If you wish to adapt the default configuration, use something like the following
 $ docker run --name tmp-nginx-container -d nginx
 $ docker cp tmp-nginx-container:/etc/nginx/nginx.conf /host/path/nginx.conf
 $ docker rm -f tmp-nginx-container
+
 This can also be accomplished more cleanly using a simple Dockerfile (in /host/path/):
 
 FROM nginx
 COPY nginx.conf /etc/nginx/nginx.conf
+
 If you add a custom CMD in the Dockerfile, be sure to include -g daemon off; in the CMD in order for nginx to stay in the foreground, so that Docker can track the process properly (otherwise your container will stop immediately after starting)!
 
 Then build the image with docker build -t custom-nginx . and run it as follows:
@@ -49,6 +52,8 @@ web:
    - NGINX_HOST=foobar.com
    - NGINX_PORT=80
   command: /bin/bash -c "envsubst < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+  
+  
 The mysite.template file may then contain variable references like this:
 
 listen ${NGINX_PORT};
@@ -66,6 +71,8 @@ web:
     - ./nginx.conf:/etc/nginx/nginx.conf:ro
   command: [nginx-debug, '-g', 'daemon off;']
 Monitoring nginx with Amplify
+
+
 
 Amplify is a free monitoring tool that can be used to monitor microservice architectures based on nginx. Amplify is developed and maintained by the company behind the nginx software.
 
