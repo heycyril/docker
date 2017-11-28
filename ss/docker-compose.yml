@@ -14,4 +14,4 @@ shadowsocks-1:
     - METHOD=aes-256-cfb
     - PASSWORD=guo123.COM
   restart: always
-  container_name: ss-guanfang0.1
+  container_name: ss-0.1
