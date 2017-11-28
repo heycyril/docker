@@ -1,24 +1,17 @@
-shadowsocks:
-   image: gsy36559067/ss:0.1
-   ports: 
-     - "60001:60001"
-     - "60002:60002"
-     - "60003:60003"
-     - "60004:60004"
-     - "60005:60005"
-     - "60006:60006"
-     - "60007:60007"
-     - "60008:60008"
-     - "60009:60009"
-     - "60000:60000"
-#   volumes:
-#     - /docker/second/ss/shadowsocks.json:/etc/shadowsocks.json
-#     - /docker/second/ss/centos7-install-shadowsocks.sh:/etc/shadowsocks-install.sh
-   container_name: ss1.2
-#   command: chmod +x /etc/shadowsocks-install.sh && ./etc/shadowsocks-install.sh
-#    
-   hostname: shadowsocks.server.com
-#   command: /etc/init.d/shadowsocks restart
-#   ###
-#   ###
-#   ###
+shadowsocks-1:
+  image: gsy36559067/ss:0.1
+  ports:
+    - "60001:8388"
+    - "60002:8388"
+    - "60003:8388"
+    - "60004:8388"
+    - "60005:8388"
+    - "60006:8388"
+    - "60007:8388"
+    - "60008:8388"
+    - "60009:8388"
+  environment:
+    - METHOD=aes-256-cfb
+    - PASSWORD=guo123.COM
+  restart: always
+  container_name: ss-guanfang0.1

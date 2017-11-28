@@ -1,0 +1,24 @@
+shadowsocks-1:
+  image: gsy36559067/ss:0.2
+  ports:
+    - "60001:8388"
+  environment:
+    - METHOD=aes-256-cfb
+    - PASSWORD=guo123.COM
+  restart: always
+shadowsocks-2:
+  image: gsy36559067/ss:0.2
+  ports:
+    - "60002:8388"
+  environment:
+    - METHOD=aes-256-cfb
+    - PASSWORD=guo123.COM
+  restart: always
+shadowsocks-3:
+  image: gsy36559067/ss:0.2
+  ports:
+    - "60003:8388"
+  environment:
+    - METHOD=aes-256-cfb
+    - PASSWORD=guo123.COM
+  restart: always
