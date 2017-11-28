@@ -3,7 +3,6 @@
 #
 
 FROM alpine:3.6
-MAINTAINER kev <noreply@datageek.info>
 
 ARG SS_VER=3.1.1
 ARG SS_URL=https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_VER/shadowsocks-libev-$SS_VER.tar.gz
