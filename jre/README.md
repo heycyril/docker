@@ -8,6 +8,7 @@ CMD ["java", "Main"]
 
 You can then run and build the Docker image:
 
+1
 $ docker build -t my-java-app .
 $ docker run -it --rm --name my-running-app my-java-app
 
