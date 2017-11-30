@@ -1,0 +1,84 @@
+2017/11/29 17:17:23 [TRACE] Log Mode: File (Trace)
+2017/11/29 17:17:23 [ INFO] Gogs 0.11.34.1122
+2017/11/29 17:17:23 [ INFO] Cache Service Enabled
+2017/11/29 17:17:23 [ INFO] Session Service Enabled
+2017/11/29 17:17:24 [ INFO] Git Version: 2.11.3
+2017/11/29 17:17:24 [ INFO] Git config user.name set to Gogs
+2017/11/29 17:17:24 [ INFO] Git config user.email set to gogs@fake.local
+2017/11/29 17:17:24 [ INFO] SQLite3 Supported
+2017/11/29 17:17:24 [ INFO] Run Mode: Production
+2017/11/29 17:17:24 [ INFO] First-time run install finished!
+2017/11/29 17:17:24 [TRACE] Doing: CheckRepoStats
+2017/11/29 17:17:24 [TRACE] Session ID: 0bfc58c19322f420
+2017/11/29 17:17:24 [TRACE] CSRF Token: dq5EFbQa4-JbfSAnygHpuOAVUKY6MTUxMTk3NTg0MjMyODc3MTQ0Ng==
+2017/11/29 17:17:24 [TRACE] Template: user/auth/login
+2017/11/29 17:17:34 [TRACE] Session ID: 0bfc58c19322f420
+2017/11/29 17:17:34 [TRACE] CSRF Token: dq5EFbQa4-JbfSAnygHpuOAVUKY6MTUxMTk3NTg0MjMyODc3MTQ0Ng==
+2017/11/29 17:17:34 [TRACE] Template: user/auth/login
+2017/11/29 17:17:41 [TRACE] Session ID: 0bfc58c19322f420
+2017/11/29 17:17:41 [TRACE] CSRF Token: dq5EFbQa4-JbfSAnygHpuOAVUKY6MTUxMTk3NTg0MjMyODc3MTQ0Ng==
+2017/11/29 17:17:41 [TRACE] Template: user/auth/signup
+2017/11/29 17:18:10 [TRACE] Session ID: 0bfc58c19322f420
+2017/11/29 17:18:10 [TRACE] CSRF Token: dq5EFbQa4-JbfSAnygHpuOAVUKY6MTUxMTk3NTg0MjMyODc3MTQ0Ng==
+2017/11/29 17:18:10 [TRACE] Account created: cyril
+2017/11/29 17:18:10 [TRACE] Session ID: 0bfc58c19322f420
+2017/11/29 17:18:10 [TRACE] CSRF Token: dq5EFbQa4-JbfSAnygHpuOAVUKY6MTUxMTk3NTg0MjMyODc3MTQ0Ng==
+2017/11/29 17:18:10 [TRACE] Template: user/auth/login
+2017/11/29 17:18:13 [TRACE] Session ID: 0bfc58c19322f420
+2017/11/29 17:18:13 [TRACE] CSRF Token: dq5EFbQa4-JbfSAnygHpuOAVUKY6MTUxMTk3NTg0MjMyODc3MTQ0Ng==
+2017/11/29 17:18:13 [TRACE] Template: user/auth/login
+2017/11/29 17:18:21 [TRACE] Session ID: 0bfc58c19322f420
+2017/11/29 17:18:21 [TRACE] CSRF Token: dq5EFbQa4-JbfSAnygHpuOAVUKY6MTUxMTk3NTg0MjMyODc3MTQ0Ng==
+2017/11/29 17:18:21 [TRACE] Session ID: 0bfc58c19322f420
+2017/11/29 17:18:21 [TRACE] CSRF Token: lhAnG4OJNqPaQ-L8qumEADMNGOc6MTUxMTk3NTkwMTgzODgxMTI4MQ==
+2017/11/29 17:18:21 [TRACE] Template: user/dashboard/dashboard
+2017/11/29 17:27:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 17:37:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 17:41:18 [TRACE] Session ID: 0bfc58c19322f420
+2017/11/29 17:41:18 [TRACE] CSRF Token: lhAnG4OJNqPaQ-L8qumEADMNGOc6MTUxMTk3NTkwMTgzODgxMTI4MQ==
+2017/11/29 17:41:18 [TRACE] Template: user/dashboard/dashboard
+2017/11/29 17:47:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 17:47:54 [TRACE] Session ID: 0bfc58c19322f420
+2017/11/29 17:47:54 [TRACE] CSRF Token: lhAnG4OJNqPaQ-L8qumEADMNGOc6MTUxMTk3NTkwMTgzODgxMTI4MQ==
+2017/11/29 17:47:54 [TRACE] Template: user/dashboard/dashboard
+2017/11/29 17:54:23 [TRACE] Session ID: 0d1b7d426aa7341a
+2017/11/29 17:54:23 [TRACE] CSRF Token: 1rXdL74n5rpNSR1FvgOAAaFx4lU6MTUxMTk3ODA2MzkyOTYwNDc1Mw==
+2017/11/29 17:54:23 [TRACE] Template: home
+2017/11/29 17:57:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 18:07:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 18:17:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 18:27:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 18:37:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 18:47:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 18:57:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 19:07:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 19:17:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 19:27:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 19:37:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 19:47:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 19:57:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 20:07:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 20:17:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 20:27:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 20:37:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 20:47:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 20:57:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 21:07:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 21:17:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 21:27:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 21:37:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 21:47:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 21:57:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 22:07:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 22:17:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 22:27:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 22:37:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 22:47:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 22:57:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 23:07:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 23:17:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 23:27:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 23:37:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 23:47:24 [TRACE] Doing: MirrorUpdate
+2017/11/29 23:57:24 [TRACE] Doing: MirrorUpdate
+2017/11/30 00:07:24 [TRACE] Doing: MirrorUpdate

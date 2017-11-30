@@ -1,0 +1,10 @@
+2017/11/29 17:17:24 [xorm] [warn]  2017/11/29 17:17:24.018534 Table repository Column enable_wiki db default is 1, struct default is true
+2017/11/29 17:17:24 [xorm] [warn]  2017/11/29 17:17:24.018611 Table repository Column enable_issues db default is 1, struct default is true
+2017/11/29 17:17:24 [xorm] [warn]  2017/11/29 17:17:24.018629 Table repository Column enable_pulls db default is 1, struct default is true
+2017/11/29 17:17:24 [xorm] [warn]  2017/11/29 17:17:24.018637 Table repository Column pulls_ignore_whitespace db default is 0, struct default is false
+2017/11/29 17:17:24 [xorm] [warn]  2017/11/29 17:17:24.018666 Table repository Column pulls_allow_rebase db default is 0, struct default is false
+2017/11/29 17:17:24 [xorm] [warn]  2017/11/29 17:17:24.018674 Table repository Column is_fork db default is 0, struct default is false
+2017/11/29 17:17:24 [xorm] [warn]  2017/11/29 17:17:24.019140 Table action Column is_private db default is 0, struct default is false
+2017/11/29 17:17:24 [xorm] [warn]  2017/11/29 17:17:24.020535 Table mirror Column enable_prune db default is 1, struct default is true
+2017/11/29 17:17:24 [xorm] [warn]  2017/11/29 17:17:24.020664 Table release Column is_draft db default is 0, struct default is false
+2017/11/29 17:17:24 [xorm] [warn]  2017/11/29 17:17:24.020742 Table login_source Column is_actived db default is 0, struct default is false
