@@ -4,10 +4,10 @@
     "local_port": 1080,
     "method": "aes-256-cfb",
     "port_password": {
-        "9000": "ss982.COM",
-        "9001": "ss982.COM",
-        "9002": "ss421.com",
-        "9003": "ss982.COM",
+        "9000": "ss982.COM", //my
+        "9001": "ss982.COM", //dingxiangyuan-wang
+        "9002": "ss421.com", //yangkai
+        "9003": "ss982.COM", //zhaopengtao
         "9004": "ss982.COM",
         "9005": "ss982.COM",
         "9006": "ss982.COM",
