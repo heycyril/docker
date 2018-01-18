@@ -1,0 +1,51 @@
+nextcloud-db:
+
+    image: mariadb
+    container_name: nextcloud_db
+    ports:
+      - "33034:3306"
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=wwwilanni
+      - MYSQL_PASSWORD=123456
+
+nextcloud_web:
+    image: wonderfall/nextcloud
+    container_name: nextcloud_web
+    environment:
+      - UID=1000
+      - GID=1000
+      - UPLOAD_MAX_SIZE=10G
+      - APC_SHM_SIZE=128M
+      - OPCACHE_MEM_SIZE=128
+      - CRON_PERIOD=15m
+      - TZ=Aisa/Shanghai
+      - ADMIN_USER=admin
+      - ADMIN_PASSWORD=123456
+      - DOMAIN=www.guoshy.cn
+      - DB_TYPE=mysql
+      - DB_NAME=nextcloud
+      - DB_USER=wwwilanni
+      - DB_PASSWORD=123456
+      - DB_HOST=nextcloud-db:3306
+    volumes:
+      - ./nextcloud/data:/data
+      - ./nextcloud/config:/config
+      - ./nextcloud/apps:/apps2
+      - ./nextcloud/themes:/nextcloud/themes
+    links:
+      - nextcloud-db
+
+nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes: 
+      - ./pan.ilanni.com.conf:/etc/nginx/conf.d/pan.ilanni.com.conf
+    links:
+      - nextcloud_web
