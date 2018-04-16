@@ -1,18 +1,23 @@
-version: '2'
+version: '2' # 这个version是指dockerfile解析时用的版本,不是给我们自己定义版本号用的.
 services:
-   mysql:
-        image: gsy36559067/mysql:0.1
-        restart: always
-        ports: 
-          - "13334:3306"
-        volumes:
-          - /docker/alpine/gogs/mysqldata-test:/var/lib/mysql
-          - /docker/docker/mysql/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
-        container_name: mysql-2
-        environment:
-#          MYSQL_DATABASE: gogs
-          MYSQL_ROOT_PASSWORD: guo123.COM
-          character-set-server: utf8
-          collation-server: utf8_general_ci
-          hostname: mydb.server.com
-
+  m1: # master
+    build: ./ # ./master文件下需要有Dockerfile文件,并且build属性和image属性不能一起使用
+    container_name: master1 # 容器名
+    volumes: # 挂载 下边每行前边的`-`代表这个东西是数组的一个元素.就是说volumes属性的值是一个数组
+       - /docker/docker/mysql/mysqldata:/var/lib/mysql
+       - /docker/docker/mysql/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+    ports:
+       - "13333:3306"
+#    networks: # 网络
+#      mysql: # 见跟services平级的networks,在最下边
+#        ipv4_address: 172.18.0.2 # 设置静态ipv4的地址
+    #ulimits: # 操作系统限制
+    #  nproc: 65535
+    hostname: master1 # hostname
+    #mem_limit: 1024m # 最大内存使用不超过1024m,我在本地机器上测试,才只写了1024m,生产上需要根据自己的服务器配置,以及docker容器数进行调优.
+    restart: always # 容器重启策略
+    environment: # 设置环境变量
+        #MYSQL_DATABASE: root
+        MYSQL_ROOT_PASSWORD: guo123.COM
+        #character-set-server: utf8mb4
+        #collation-server: utf8mb4_unicode_ci
