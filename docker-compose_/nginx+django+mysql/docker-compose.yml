@@ -1,0 +1,35 @@
+version: "3"
+services:
+  db:
+    image: mysql
+    environment:
+       MYSQL_DATABASE: Userdb
+       MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - /srv/db:/var/lib/mysql
+    restart: always
+  django1:
+    build: ./User
+    ports:
+    - "8000:8000"
+    volumes:
+    - ./User:/User
+    - /tmp/logs:/tmp
+    command: python3 manage.py runserver 0.0.0.0:8000
+    links:
+    - db
+    depends_on:
+      - db
+    restart: always
+  nginx1:
+    build: ./nginx
+    ports:
+    - "80:80"
+    volumes:
+    - ./User/static:/usr/share/nginx/html/static
+    - ./User/media:/usr/share/nginx/html/media
+    links:
+    - web1
+    depends_on:
+    - web1
+    restart: always
