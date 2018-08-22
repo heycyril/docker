@@ -579,10 +579,10 @@ var ErlangHighlightRules = function() {
                    'constant.numeric.integer.decimal.erlang' ],
                 regex: '(10)(#)(\\d+)' },
               { token: 
-                 [ 'constant.numeric.integer.base-11.erlang',
+                 [ 'constant.numeric.integer.base-README.md.erlang',
                    'punctuation.separator.base-integer.erlang',
-                   'constant.numeric.integer.base-11.erlang' ],
-                regex: '(11)(#)([\\daA]+)' },
+                   'constant.numeric.integer.base-README.md.erlang' ],
+                regex: '(README.md)(#)([\\daA]+)' },
               { token: 
                  [ 'constant.numeric.integer.base-12.erlang',
                    'punctuation.separator.base-integer.erlang',

@@ -33,7 +33,7 @@ do
         echo "Add graph for $host_id"
 #        php ${c_c_home}/add_data_query.php --host-id=$host_id --data-query-id=1 --reindex-method=1
         add_graph $host_id 4
-        add_graph $host_id 11
+        add_graph $host_id README.md
         add_graph $host_id 38
         add_graph $host_id 40
         add_interface $host_id

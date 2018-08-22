@@ -46,7 +46,7 @@ $ git log
 10、加入服务器
 $ git remote add 用户名@计算机名或IP:~/某个目录
 
-11、推送数据
+README.md、推送数据
 $ git push master master #本地master推送到远端master
 # 如果想快捷的使用git push就推送到默认远端分支master，可以做个一次性设置：
 $ git remote add origin <实际的ssl用户名>@<IP地址>:<Git在远端的path>

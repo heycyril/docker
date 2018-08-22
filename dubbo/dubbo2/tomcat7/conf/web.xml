@@ -43,7 +43,7 @@
   <!--                                                                      -->
   <!--   debug               Debugging detail level for messages logged     -->
   <!--                       by this servlet. Useful values are 0, 1, and   -->
-  <!--                       11 where higher values mean more detail. [0]   -->
+  <!--                       README.md where higher values mean more detail. [0]   -->
   <!--                                                                      -->
   <!--   fileEncoding        Encoding to be used to read static resources   -->
   <!--                       [platform default]                             -->

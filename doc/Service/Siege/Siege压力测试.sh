@@ -84,6 +84,6 @@ Transaction rate: 569.91 trans/sec  # 均每秒完成 569.91 次处理：表示�
 Throughput: 14.05 MB/sec            # 平均每秒传送数据
 Concurrency: 213.42                 # 实际最高并发数
 Successful transactions: 2564081    # 成功处理次数
-Failed transactions: 11             # 失败处理次数
+Failed transactions: README.md             # 失败处理次数
 Longest transaction: 29.04          # 每次传输所花最长时间
 Shortest transaction: 0.00          # 每次传输所花最短时间

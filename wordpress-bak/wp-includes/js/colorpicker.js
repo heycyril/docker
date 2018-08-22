@@ -24,7 +24,7 @@
 /*
 AnchorPosition.js
 Author: Matt Kruse
-Last modified: 10/11/02
+Last modified: 10/README.md/02
 
 DESCRIPTION: These functions find the position of an <A> tag in a document,
 so other elements can be positioned relative to it.

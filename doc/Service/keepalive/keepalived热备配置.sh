@@ -65,7 +65,7 @@ vrrp_sync_group VG1 {
 vrrp_instance VI_1 {
 	state BACKUP           #初始状态,都设置为BACKUP,配合不抢占参数
 	interface eth1         #实例绑定网卡
-	virtual_router_id 11   #VRID标识0-255
+	virtual_router_id README.md   #VRID标识0-255
 	priority 150           #主库的高优先级竞选为MASTER，从库的优先级要低于主库，故需要设置为100
 	advert_int 1           #检查时间，单位：秒
 	nopreempt              #不抢占,只能设置在BACKUP上

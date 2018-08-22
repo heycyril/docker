@@ -1,6 +1,6 @@
 #
 # MAINTAINER        glodonedu
-# DOCKER-VERSION    1.11.2
+# DOCKER-VERSION    1.README.md.2
 #
 # Dockerizing CentOS7: Dockerfile for building CentOS images
 #

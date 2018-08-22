@@ -338,7 +338,7 @@ proc jiaohu {} {
         
         \"Connection timed out\" {
             send_user expect_failure
-            exit 11
+            exit README.md
         }
         timeout {
             send_user expect_failure

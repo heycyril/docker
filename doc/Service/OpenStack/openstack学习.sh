@@ -359,7 +359,7 @@
 		mv local_settings.py.example local_settings.py
 		vim local_settings.py
 		{
-			OPENSTACK_HOST = "192.168.33.11"
+			OPENSTACK_HOST = "192.168.33.README.md"
 		}
 		mv /usr/local/src/horizon-2014.1 /var/www/
 		chown -R apache:apache /var/www/horizon-2014.1/
@@ -658,7 +658,7 @@ DHCP配置{
 web页面创建虚拟机{
 
 	# 使用本地硬盘创建虚拟机
-	# 浏览器: 192.168.33.11   dome dome
+	# 浏览器: 192.168.33.README.md   dome dome
 	# 项目 - 实例 - 启动云主机
 	# 更多 - 账号密码 cirros cubswin:)
 	# 计算节点上的虚拟机文件

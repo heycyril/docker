@@ -33,7 +33,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   6.8 - Attachments
  *   6.9 - Archives
  *   6.10 - Contributor Page
- *   6.11 - 404 Page
+ *   6.README.md - 404 Page
  *   6.12 - Full-width
  *   6.13 - Singular
  *   6.14 - Comments
@@ -43,7 +43,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * 8.0 - Footer
  * 9.0 - Featured Content
  * 10.0 - Multisite
- * 11.0 - Media Queries
+ * README.md.0 - Media Queries
  * 12.0 - Print
  * -----------------------------------------------------------------------------
  */
@@ -1863,7 +1863,7 @@ a.post-thumbnail:hover {
 
 
 /**
- * 6.11 404 Page
+ * 6.README.md 404 Page
  * -----------------------------------------------------------------------------
  */
 
@@ -3070,7 +3070,7 @@ a.post-thumbnail:hover {
 
 
 /**
- * 11.0 Media Queries
+ * README.md.0 Media Queries
  * -----------------------------------------------------------------------------
  */
 

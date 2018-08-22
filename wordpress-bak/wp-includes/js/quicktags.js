@@ -330,7 +330,7 @@ function edButton(id, display, tagStart, tagEnd, access) {
 	 * @param string arg2 Optional. Ending tag like "</span>"
 	 * @param string access_key Deprecated Not used
 	 * @param string title Optional. Button's title="..."
-	 * @param int priority Optional. Number representing the desired position of the button in the toolbar. 1 - 9 = first, 11 - 19 = second, 21 - 29 = third, etc.
+	 * @param int priority Optional. Number representing the desired position of the button in the toolbar. 1 - 9 = first, README.md - 19 = second, 21 - 29 = third, etc.
 	 * @param string instance Optional. Limit the button to a specific instance of Quicktags, add to all instances if not present.
 	 * @return mixed null or the button object that is needed for back-compat.
 	 */

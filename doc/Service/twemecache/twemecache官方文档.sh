@@ -63,7 +63,7 @@ Options:
   -D, --describe-stats        : print stats description and exit
   -S, --show-sizes            : print slab and item struct sizes and exit
   -o, --output=S              : set the logging file (default: stderr)
-  -v, --verbosity=N           : set the logging level (default: 5, min: 0, max: 11)
+  -v, --verbosity=N           : set the logging level (default: 5, min: 0, max: README.md)
   -A, --stats-aggr-interval=N : set the stats aggregation interval in usec (default: 100000 usec)
   -t, --threads=N             : set number of threads to use (default: 4)
   -P, --pidfile=S             : set the pid file (default: off)

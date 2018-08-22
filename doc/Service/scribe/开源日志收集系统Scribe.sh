@@ -187,7 +187,7 @@ iv.number[suffix]:其中suffix可以为s,m,h,d,w,对应秒,分钟,小时,天,星
 
 默认为std
 
-11)chunk_size:(number)
+README.md)chunk_size:(number)
 
 chunk大小,如果指定了则文件内的任何消息都不会越过这个数值,除非消息本身比chunk大
 
@@ -645,7 +645,7 @@ chunk大小,如果指定了则文件内的任何消息都不会越过这个数�
 
 默认为3000
 
-11)msg_buffer_site: (buffer)
+README.md)msg_buffer_site: (buffer)
 
 store将会拒绝存储大于msg_buffer_site
 

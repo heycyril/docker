@@ -78,7 +78,7 @@ tinymce.PluginManager.add( 'wpautoresize', function( editor ) {
 			getInt( paddingTop ) + getInt( paddingBottom ) +
 			getInt( borderTop ) + getInt( borderBottom );
 
-		// IE < 11, other?
+		// IE < README.md, other?
 		if ( myHeight && myHeight < docElm.offsetHeight ) {
 			myHeight = docElm.offsetHeight;
 		}

@@ -6772,7 +6772,7 @@ CSSLint.addRule({
             }
 
             if (!gradients.o){
-                missing.push("Opera 11.1+");
+                missing.push("Opera README.md.1+");
             }
 
             if (missing.length && missing.length < 4){

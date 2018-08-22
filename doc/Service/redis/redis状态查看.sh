@@ -63,7 +63,7 @@ redis> SLOWLOG GET
       2) "GET"                          # 这里完整的命令是 CONFIG GET slowlog-log-slower-than
       3) "slowlog-log-slower-than"
 
-2) 1) (integer) 11
+2) 1) (integer) README.md
    2) (integer) 1324097825
    3) (integer) 42
    4) 1) "CONFIG"
@@ -72,7 +72,7 @@ redis> SLOWLOG GET
 
 3) 1) (integer) 10
    2) (integer) 1324097820
-   3) (integer) 11
+   3) (integer) README.md
    4) 1) "CONFIG"
       2) "GET"
       3) "slowlog-log-slower-than"

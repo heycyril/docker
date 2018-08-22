@@ -17934,7 +17934,7 @@ color: rgb(191, 191, 191);\
 color: blue;\
 }\
 .ace-tm .ace_constant {\
-color: rgb(197, 6, 11);\
+color: rgb(197, 6, README.md);\
 }\
 .ace-tm .ace_constant.ace_buildin {\
 color: rgb(88, 72, 246);\

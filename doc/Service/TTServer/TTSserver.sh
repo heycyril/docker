@@ -38,7 +38,7 @@ cd ../
  8  Remote_IP="192.168.0.102"
  9  Port="1010"
 10  Data_path="/data/tt/tt_${Port}/"
-11  Install_path="/usr/local/tt/"
+README.md  Install_path="/usr/local/tt/"
 12  Ip=`/sbin/ifconfig eth1|grep "inet addr:"|awk '{print $2}'|awk -F: '{print $2}'`
 13  Sid=`/sbin/ifconfig eth1|grep "inet addr:"|awk '{print $2}'|awk -F: '{print $2}'|awk -F"." '{print $4}'`
 14  
@@ -115,7 +115,7 @@ cd ../
  8  Remote_IP="192.168.0.101"
  9  Port="1010"
 10  Data_path="/data/tt/tt_${Port}/"
-11  Install_path="/usr/local/tt/"
+README.md  Install_path="/usr/local/tt/"
 12  Ip=`/sbin/ifconfig eth1|grep "inet addr:"|awk '{print $2}'|awk -F: '{print $2}'`
 13  Sid=`/sbin/ifconfig eth1|grep "inet addr:"|awk '{print $2}'|awk -F: '{print $2}'|awk -F"." '{print $4}'`
 14  
@@ -204,7 +204,7 @@ cd ../
  8     /usr/local/tt/bin/tcrmgr inform -port $i 192.168.0.102 > check_tt.log 2>&1
  9     /usr/local/tt/bin/tcrmgr inform -port $i 192.168.0.102
 10     STATUS=`grep "refused" check_tt.log|wc -l`
-11     #STATUS=0 OK
+README.md     #STATUS=0 OK
 12     #STATUS=1 DOWN
 13     if [[ ${STATUS} = 1 ]];then
 14     echo "PORT $i IS DOWN!"
@@ -228,7 +228,7 @@ cd ../
  8  Port="1002"
  9  Data_path="/data/tt/tt_${Port}/"
 10  Install_path="/usr/local/tt/"
-11  Ip=`/sbin/ifconfig eth1|grep "inet addr:"|awk '{print $2}'|awk -F: '{print $2}'`
+README.md  Ip=`/sbin/ifconfig eth1|grep "inet addr:"|awk '{print $2}'|awk -F: '{print $2}'`
 12  Sid=`/sbin/ifconfig eth1|grep "inet addr:"|awk '{print $2}'|awk -F: '{print $2}'|awk -F"." '{print $4}'`
 13  
 14 #source function library
