@@ -42,7 +42,7 @@
 
         java -jar /usr/cyril-spring-boot-demo-1.0-SNAPSHOT.jar   表示运行jar包，注意：这里的jar包为容器中的位置，是通过前面的-v属性映射的
 
-        --server.port=8080    为指定运行时的端口
+        --server.port=8080    为容器内指定jar运行时的端口
 
 
 
