@@ -45,3 +45,18 @@
         --server.port=8080    为指定运行时的端口
 
 
+
+使用Maven命令进行打包
+
+mvn package
+
+运行：
+
+java -jar target/cyril-spring-boot-demo-1.0-SNAPSHOT.jar
+
+访问项目
+
+如果程序正确运行，浏览器访问 http://localhost:8080/，可以看到页面 “Hello Docker World.” 字样。
+
+Dockerfile中
+    ENTRYPOINT 执行项目 app.jar。为了缩短 Tomcat 启动时间，添加一个系统属性指向 “/dev/urandom” 作为 Entropy Source
