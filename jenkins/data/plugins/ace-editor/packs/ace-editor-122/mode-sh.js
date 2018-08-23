@@ -18,7 +18,7 @@ var languageConstructs = exports.languageConstructs = (
      'exit|fc|fg|getopts|hash|help|history|'+
      'jobs|kill|let|logout|popd|printf|pushd|'+
      'pwd|return|set|shift|shopt|source|'+
-     'suspend|test|times|trap|type|ulimit|'+
+     'suspend|test.yaml|times|trap|type|ulimit|'+
      'umask|unalias|wait'
 );
 

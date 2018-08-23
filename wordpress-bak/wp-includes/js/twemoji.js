@@ -215,7 +215,7 @@ var twemoji = (function (
        *
        * @example
        *
-       *  if (twemoji.test(someContent)) {
+       *  if (twemoji.test.yaml(someContent)) {
        *    console.log("emoji All The Things!");
        *  }
        */

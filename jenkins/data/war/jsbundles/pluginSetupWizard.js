@@ -63,7 +63,7 @@ function execCallback(callback, theWindow) {
 /**
  * Get the global "window" object.
  * @param callback An optional callback that can be used to receive the window asynchronously. Useful when
- * executing in test environment i.e. where the global window object might not exist immediately. 
+ * executing in test.yaml environment i.e. where the global window object might not exist immediately.
  * @param timeout The timeout if waiting on the global window to be initialised.
  * @returns {*}
  */
@@ -80,7 +80,7 @@ exports.getWindow = function(callback, timeout) {
 			return window;
 		} 
 	} catch (e) {
-		// no window "yet". This should only ever be the case in a test env.
+		// no window "yet". This should only ever be the case in a test.yaml env.
 		// Fall through and use callbacks, if supplied.
 	}
 
@@ -95,12 +95,12 @@ exports.getWindow = function(callback, timeout) {
         }
         waitForWindow(callback);
 	} else {
-		throw "No 'window' available. Consider providing a 'callback' and receiving the 'window' async when available. Typically, this should only be the case in a test environment.";
+		throw "No 'window' available. Consider providing a 'callback' and receiving the 'window' async when available. Typically, this should only be the case in a test.yaml environment.";
 	}
 }
 
 /**
- * Set the global window e.g. in a test environment.
+ * Set the global window e.g. in a test.yaml environment.
  * <p>
  * Once called, all callbacks (registered by earlier 'getWindow' calls) will be invoked.
  * 
@@ -318,7 +318,7 @@ exports.setRootURL = function(rootUrl) {
 /**
  * Manually initialise the Jenkins Global.
  * <p>
- * This should only ever be called from a test environment.
+ * This should only ever be called from a test.yaml environment.
  */
 exports.initJenkinsGlobal = function() {
     internal.initJenkinsGlobal();
@@ -344,7 +344,7 @@ var jenkinsCIGlobal;
 var globalInitListeners = [];
 
 exports.onReady = function(callback) {
-    // This allows test based initialization of jenkins-js-modules when there might 
+    // This allows test.yaml based initialization of jenkins-js-modules when there might
     // not yet be a global window object.
     if (jenkinsCIGlobal) {
         callback();
@@ -412,7 +412,7 @@ exports.import = function(moduleQName, onRegisterTimeout) {
     return promise.make(function (resolve, reject) {
         // getPlugin etc needs to access the 'window' global. We want to make sure that
         // exists before attempting to fulfill the require operation. It may not exists
-        // immediately in a test env.
+        // immediately in a test.yaml env.
         exports.onReady(function() {
             var moduleSpec = exports.parseModuleQName(moduleQName);
             var module = exports.getModule(moduleSpec);
@@ -1062,7 +1062,7 @@ exports.getAdjunctURL = internal.getAdjunctURL;
 /**
  * Manually initialise the Jenkins Global.
  * <p>
- * This should only ever be called from a test environment.
+ * This should only ever be called from a test.yaml environment.
  */
 exports.initJenkinsGlobal = function() {
     internal.initJenkinsGlobal();
@@ -1097,7 +1097,7 @@ exports.whoami = function(moduleQName) {
 };
 
 exports.onReady = function(callback) {
-    // This allows test based initialization of jenkins-js-modules when there might 
+    // This allows test.yaml based initialization of jenkins-js-modules when there might
     // not yet be a global window object.
     if (jenkinsCIGlobal) {
         callback();
@@ -1166,7 +1166,7 @@ exports.import = function(moduleQName, onRegisterTimeout) {
     return promise.make(function (resolve, reject) {
         // Some functions here needs to access the 'window' global. We want to make sure that
         // exists before attempting to fulfill the require operation. It may not exists
-        // immediately in a test env.
+        // immediately in a test.yaml env.
         exports.onReady(function() {
             var moduleSpec = exports.parseResourceQName(moduleQName);
             var module = exports.getModule(moduleSpec);
@@ -1794,7 +1794,7 @@ function execCallback(callback, theWindow) {
 /**
  * Get the global "window" object.
  * @param callback An optional callback that can be used to receive the window asynchronously. Useful when
- * executing in test environment i.e. where the global window object might not exist immediately. 
+ * executing in test.yaml environment i.e. where the global window object might not exist immediately.
  * @param timeout The timeout if waiting on the global window to be initialised.
  * @returns {*}
  */
@@ -1812,7 +1812,7 @@ exports.getWindow = function(callback, timeout) {
 			return window;
 		} 
 	} catch (e) {
-		// no window "yet". This should only ever be the case in a test env.
+		// no window "yet". This should only ever be the case in a test.yaml env.
 		// Fall through and use callbacks, if supplied.
 	}
 
@@ -1826,12 +1826,12 @@ exports.getWindow = function(callback, timeout) {
         }
         waitForWindow(callback);
 	} else {
-		throw new Error("No 'window' available. Consider providing a 'callback' and receiving the 'window' async when available. Typically, this should only be the case in a test environment.");
+		throw new Error("No 'window' available. Consider providing a 'callback' and receiving the 'window' async when available. Typically, this should only be the case in a test.yaml environment.");
 	}
 }
 
 /**
- * Set the global window e.g. in a test environment.
+ * Set the global window e.g. in a test.yaml environment.
  * <p>
  * Once called, all callbacks (registered by earlier 'getWindow' calls) will be invoked.
  * 
@@ -3091,7 +3091,7 @@ var createPluginSetupWizard = function(appendTarget) {
 	// Save the proxy config
 	var saveProxyConfig = function() {
 		securityConfig.saveProxy($('iframe[src]').contents().find('form:not(.no-json)'), function() {
-			jenkins.goTo('/'); // this will re-run connectivity test
+			jenkins.goTo('/'); // this will re-run connectivity test.yaml
 		});
 	};
 	
@@ -3975,7 +3975,7 @@ exports.loadTranslations = function(bundleName, handler, onError) {
 };
 
 /**
- * Runs a connectivity test, calls handler with a boolean whether there is sufficient connectivity to the internet
+ * Runs a connectivity test.yaml, calls handler with a boolean whether there is sufficient connectivity to the internet
  */
 exports.testConnectivity = function(siteId, handler) {
 	// check the connectivity api

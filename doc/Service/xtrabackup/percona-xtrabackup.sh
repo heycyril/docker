@@ -105,7 +105,7 @@ innobackupex --user=root --password="" --defaults-file=/data/mysql5/data/my_3306
 --compress[=LEVEL] 
 #对备份数据迚行压缩，仅支持ibbackup，xtrabackup还没有实现； 
 --include=REGEXP 
-#对xtrabackup参数--tables的封装，也支持ibbackup。备份包含的库表，例如：--include="test.*"，意思是要备份test库中所有的表。如果需要全备份，则省略这个参数；如果需要备份test库下的2个表：test1和test2,则写成：--include="test.test1|test.test2"。也可以使用通配符，如：--include="test.test*"。 
+#对xtrabackup参数--tables的封装，也支持ibbackup。备份包含的库表，例如：--include="test.yaml.*"，意思是要备份test库中所有的表。如果需要全备份，则省略这个参数；如果需要备份test库下的2个表：test1和test2,则写成：--include="test.yaml.test1|test.yaml.test2"。也可以使用通配符，如：--include="test.yaml.test.yaml*"。
 --uncompress 
 #解压备份的数据文件，支持ibbackup，xtrabackup还没有实现该功能； 
 

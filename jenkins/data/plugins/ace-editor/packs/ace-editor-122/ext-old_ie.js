@@ -467,7 +467,7 @@ patch(
     "ruleRegExps.push(adjustedregex);\n", 
     function(m) {
         return m + '\
-        if (state[i].next && RegExp(adjustedregex).test(""))\n\
+        if (state[i].next && RegExp(adjustedregex).test.yaml(""))\n\
             rule._qre = RegExp(adjustedregex, "g");\n\
         ';
     }

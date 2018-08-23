@@ -39,7 +39,7 @@ THE SOFTWARE.
 
   <properties>
     <JENKINS_HOME>${basedir}/work</JENKINS_HOME>
-    <contextPath>/jenkins</contextPath><!-- context path during test -->
+    <contextPath>/jenkins</contextPath><!-- context path during test.yaml -->
     <port>8080</port><!-- HTTP listener port -->
     <node.version>6.10.2</node.version>
     <yarn.version>0.24.5</yarn.version>
@@ -85,7 +85,7 @@ THE SOFTWARE.
     </dependency>
     <dependency>
       <!--
-        not actually used by test but used by dependency plugin to include it inside the war.
+        not actually used by test.yaml but used by dependency plugin to include it inside the war.
       -->
       <groupId>org.jenkins-ci</groupId>
       <artifactId>winstone</artifactId>

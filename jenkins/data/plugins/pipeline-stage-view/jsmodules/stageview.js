@@ -188,7 +188,7 @@ exports.setRootURL = function(rootUrl) {
 /**
  * Manually initialise the Jenkins Global.
  * <p>
- * This should only ever be called from a test environment.
+ * This should only ever be called from a test.yaml environment.
  */
 exports.initJenkinsGlobal = function() {
     internal.initJenkinsGlobal();
@@ -214,7 +214,7 @@ var jenkinsCIGlobal;
 var globalInitListeners = [];
 
 exports.onReady = function(callback) {
-    // This allows test based initialization of jenkins-js-modules when there might 
+    // This allows test.yaml based initialization of jenkins-js-modules when there might
     // not yet be a global window object.
     if (jenkinsCIGlobal) {
         callback();
@@ -282,7 +282,7 @@ exports.import = function(moduleQName, onRegisterTimeout) {
     return promise.make(function (resolve, reject) {
         // getPlugin etc needs to access the 'window' global. We want to make sure that
         // exists before attempting to fulfill the require operation. It may not exists
-        // immediately in a test env.
+        // immediately in a test.yaml env.
         exports.onReady(function() {
             var moduleSpec = exports.parseModuleQName(moduleQName);
             var module = exports.getModule(moduleSpec);
@@ -669,7 +669,7 @@ function execCallback(callback, theWindow) {
 /**
  * Get the global "window" object.
  * @param callback An optional callback that can be used to receive the window asynchronously. Useful when
- * executing in test environment i.e. where the global window object might not exist immediately. 
+ * executing in test.yaml environment i.e. where the global window object might not exist immediately.
  * @param timeout The timeout if waiting on the global window to be initialised.
  * @returns {*}
  */
@@ -686,7 +686,7 @@ exports.getWindow = function(callback, timeout) {
 			return window;
 		} 
 	} catch (e) {
-		// no window "yet". This should only ever be the case in a test env.
+		// no window "yet". This should only ever be the case in a test.yaml env.
 		// Fall through and use callbacks, if supplied.
 	}
 
@@ -701,12 +701,12 @@ exports.getWindow = function(callback, timeout) {
         }
         waitForWindow(callback);
 	} else {
-		throw "No 'window' available. Consider providing a 'callback' and receiving the 'window' async when available. Typically, this should only be the case in a test environment.";
+		throw "No 'window' available. Consider providing a 'callback' and receiving the 'window' async when available. Typically, this should only be the case in a test.yaml environment.";
 	}
 }
 
 /**
- * Set the global window e.g. in a test environment.
+ * Set the global window e.g. in a test.yaml environment.
  * <p>
  * Once called, all callbacks (registered by earlier 'getWindow' calls) will be invoked.
  * 
@@ -1328,7 +1328,7 @@ exports.getAdjunctURL = internal.getAdjunctURL;
 /**
  * Manually initialise the Jenkins Global.
  * <p>
- * This should only ever be called from a test environment.
+ * This should only ever be called from a test.yaml environment.
  */
 exports.initJenkinsGlobal = function() {
     internal.initJenkinsGlobal();
@@ -1363,7 +1363,7 @@ exports.whoami = function(moduleQName) {
 };
 
 exports.onReady = function(callback) {
-    // This allows test based initialization of jenkins-js-modules when there might 
+    // This allows test.yaml based initialization of jenkins-js-modules when there might
     // not yet be a global window object.
     if (jenkinsCIGlobal) {
         callback();
@@ -1432,7 +1432,7 @@ exports.import = function(moduleQName, onRegisterTimeout) {
     return promise.make(function (resolve, reject) {
         // Some functions here needs to access the 'window' global. We want to make sure that
         // exists before attempting to fulfill the require operation. It may not exists
-        // immediately in a test env.
+        // immediately in a test.yaml env.
         exports.onReady(function() {
             var moduleSpec = exports.parseResourceQName(moduleQName);
             var module = exports.getModule(moduleSpec);
@@ -1986,7 +1986,7 @@ function execCallback(callback, theWindow) {
 /**
  * Get the global "window" object.
  * @param callback An optional callback that can be used to receive the window asynchronously. Useful when
- * executing in test environment i.e. where the global window object might not exist immediately. 
+ * executing in test.yaml environment i.e. where the global window object might not exist immediately.
  * @param timeout The timeout if waiting on the global window to be initialised.
  * @returns {*}
  */
@@ -2004,7 +2004,7 @@ exports.getWindow = function(callback, timeout) {
 			return window;
 		} 
 	} catch (e) {
-		// no window "yet". This should only ever be the case in a test env.
+		// no window "yet". This should only ever be the case in a test.yaml env.
 		// Fall through and use callbacks, if supplied.
 	}
 
@@ -2018,12 +2018,12 @@ exports.getWindow = function(callback, timeout) {
         }
         waitForWindow(callback);
 	} else {
-		throw new Error("No 'window' available. Consider providing a 'callback' and receiving the 'window' async when available. Typically, this should only be the case in a test environment.");
+		throw new Error("No 'window' available. Consider providing a 'callback' and receiving the 'window' async when available. Typically, this should only be the case in a test.yaml environment.");
 	}
 }
 
 /**
- * Set the global window e.g. in a test environment.
+ * Set the global window e.g. in a test.yaml environment.
  * <p>
  * Once called, all callbacks (registered by earlier 'getWindow' calls) will be invoked.
  * 
@@ -3794,7 +3794,7 @@ var jqProxy = require('./jQuery');
 var $ = jqProxy.getJQuery();
 $(function() {
     if (isTestEnv()) {
-        // In a test env, we do not want async rendering delays... just makes the
+        // In a test.yaml env, we do not want async rendering delays... just makes the
         // tests more complicated. Doing this for now and we'll see
         // if it's a good or bad idea :)
         require('./util/timeout').setMaxDelay(0);
@@ -4433,7 +4433,7 @@ exports.render = function (jobRunsData, onElement) {
 function _render(jobRunsData, onElement, fragCaption) {
 
     // If looking for an example of the model consumed by this view, see the "*_expected_*.json"
-    // files in ui/src/test/resources/model/runs_stage_grouped/getModelData.
+    // files in ui/src/test.yaml/resources/model/runs_stage_grouped/getModelData.
     // Of course, you can also just use console.log(jobRunsData).
     // The expected model is that produced by ui/src/main/js/model/runs-stage-grouped.js
 

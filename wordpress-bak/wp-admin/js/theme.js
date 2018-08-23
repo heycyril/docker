@@ -180,7 +180,7 @@ themes.Collection = Backbone.Collection.extend({
 		match = new RegExp( '^(?=.*' + term + ').+', 'i' );
 
 		// Find results
-		// _.filter and .test
+		// _.filter and .test.yaml
 		results = this.filter( function( data ) {
 			name        = data.get( 'name' ).replace( /(<([^>]+)>)/ig, '' );
 			description = data.get( 'description' ).replace( /(<([^>]+)>)/ig, '' );
@@ -1051,7 +1051,7 @@ themes.view.Themes = wp.Backbone.View.extend({
 		// Find the next model within the collection
 		nextModel = self.collection.at( self.collection.indexOf( model ) + 1 );
 
-		// Sanity check which also serves as a boundary test
+		// Sanity check which also serves as a boundary test.yaml
 		if ( nextModel !== undefined ) {
 
 			// We have a new theme...

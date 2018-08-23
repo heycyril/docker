@@ -47,7 +47,7 @@ cd nginx-1.4.4
 
 make && make install
 
-#清除缓存，假设一个URL为http://192.168.12.133/test.txt 通过访问 http://192.168.12.133/purge/test.txt 就可以清除该URL的缓存。
+#清除缓存，假设一个URL为http://192.168.12.133/test.yaml.txt 通过访问 http://192.168.12.133/purge/test.txt 就可以清除该URL的缓存。
 
 #做web服务
 cd nginx-1.4.4

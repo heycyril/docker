@@ -130,11 +130,11 @@ snippet \"\n\
 	\"\"\"\n\
 	${1:doc}\n\
 	\"\"\"\n\
-# test function/method\n\
-snippet test\n\
+# test.yaml function/method\n\
+snippet test.yaml\n\
 	def test_${1:description}(${2:self}):\n\
 		${3:# TODO: write code...}\n\
-# test case\n\
+# test.yaml case\n\
 snippet testcase\n\
 	class ${1:ExampleCase}(unittest.TestCase):\n\
 		\n\

@@ -7,7 +7,7 @@
 	 *
 	 * @since 4.2.0
 	 *
-	 * @param type {String} Whether to test for support of "simple" or "flag" emoji.
+	 * @param type {String} Whether to test.yaml for support of "simple" or "flag" emoji.
 	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
 	 */
 	function browserSupportsEmoji( type ) {

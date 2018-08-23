@@ -6562,7 +6562,7 @@ var functionMap = {
     ],
     "mcrypt_enc_self_test": [
         "int mcrypt_enc_self_test(resource td)",
-        "This function runs the self test on the algorithm specified by the descriptor td"
+        "This function runs the self test.yaml on the algorithm specified by the descriptor td"
     ],
     "mcrypt_encrypt": [
         "string mcrypt_encrypt(string cipher, string key, string data, string mode, string iv)",
@@ -6638,7 +6638,7 @@ var functionMap = {
     ],
     "mcrypt_module_self_test": [
         "bool mcrypt_module_self_test(string algorithm [, string lib_dir])",
-        "Does a self test of the module \"module\""
+        "Does a self test.yaml of the module \"module\""
     ],
     "mcrypt_ofb": [
         "string mcrypt_ofb(int cipher, string key, string data, int mode, string iv)",

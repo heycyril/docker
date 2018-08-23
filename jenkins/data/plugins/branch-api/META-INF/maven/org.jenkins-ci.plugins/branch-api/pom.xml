@@ -102,7 +102,7 @@
       <version>1.9</version>
     </dependency>
     <!-- jenkins dependencies -->
-    <!-- test dependencies -->
+    <!-- test.yaml dependencies -->
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>

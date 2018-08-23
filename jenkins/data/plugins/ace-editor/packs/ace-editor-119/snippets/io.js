@@ -52,7 +52,7 @@ exports.snippets = [
         "tabTrigger": "ocdo"
     },
     {
-        "content": "test${1:SomeFeature} := method(\n\t$0\n)",
+        "content": "test.yaml${1:SomeFeature} := method(\n\t$0\n)",
         "name": "testMethod",
         "scope": "io",
         "tabTrigger": "ts"

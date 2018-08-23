@@ -109,7 +109,7 @@ snippet errln\n\
 ##\n\
 ## Exception Handling\n\
 snippet as\n\
-	assert ${1:test} : \"${2:Failure message}\";${3}\n\
+	assert ${1:test.yaml} : \"${2:Failure message}\";${3}\n\
 snippet ca\n\
 	catch(${1:Exception} ${2:e}) ${3}\n\
 snippet thr\n\
@@ -209,12 +209,12 @@ snippet br\n\
 ##\n\
 ## Test Methods\n\
 snippet t\n\
-	public void test${1:Name}() throws Exception {\n\
+	public void test.yaml${1:Name}() throws Exception {\n\
 		${2}\n\
 	}\n\
-snippet test\n\
+snippet test.yaml\n\
 	@Test\n\
-	public void test${1:Name}() throws Exception {\n\
+	public void test.yaml${1:Name}() throws Exception {\n\
 		${2}\n\
 	}\n\
 ##\n\

@@ -418,7 +418,7 @@ snippet opt\n\
 		${6}\n\
 	end\n\
 snippet tc\n\
-	require \"test/unit\"\n\
+	require \"test.yaml/unit\"\n\
 \n\
 	require \"${1:library_file_name}\"\n\
 \n\
@@ -428,12 +428,12 @@ snippet tc\n\
 		end\n\
 	end\n\
 snippet ts\n\
-	require \"test/unit\"\n\
+	require \"test.yaml/unit\"\n\
 \n\
 	require \"tc_${1:test_case_file}\"\n\
 	require \"tc_${2:test_case_file}\"${3}\n\
 snippet as\n\
-	assert ${1:test}, \"${2:Failure message.}\"${3}\n\
+	assert ${1:test.yaml}, \"${2:Failure message.}\"${3}\n\
 snippet ase\n\
 	assert_equal ${1:expected}, ${2:actual}${3}\n\
 snippet asne\n\
@@ -537,7 +537,7 @@ snippet b\n\
 	{ |${1:var}| ${2} }\n\
 snippet begin\n\
 	begin\n\
-		raise 'A test exception.'\n\
+		raise 'A test.yaml exception.'\n\
 	rescue Exception => e\n\
 		puts e.message\n\
 		puts e.backtrace.inspect\n\
@@ -868,8 +868,8 @@ snippet xpost\n\
 	xhr :post, :${1:create}, :${2:object} => { ${3} }\n\
 snippet xput\n\
 	xhr :put, :${1:update}, :id => ${2:1}, :${3:object} => { ${4} }${5}\n\
-snippet test\n\
-	test \"should ${1:do something}\" do\n\
+snippet test.yaml\n\
+	test.yaml \"should ${1:do something}\" do\n\
 		${2}\n\
 	end\n\
 #migrations\n\

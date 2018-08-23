@@ -49,7 +49,7 @@ NOTES:
 
 2) Your anchor tag MUST contain both NAME and ID attributes which are the
    same. For example:
-   <A NAME="test" ID="test"> </A>
+   <A NAME="test.yaml" ID="test.yaml"> </A>
 
 3) There must be at least a space between <A> </A> for IE5.5 to see the
    anchor tag correctly. Do not do <A></A> with no space.
@@ -207,7 +207,7 @@ NOTES:
 
 2) Your anchor tag MUST contain both NAME and ID attributes which are the
    same. For example:
-   <A NAME="test" ID="test"> </A>
+   <A NAME="test.yaml" ID="test.yaml"> </A>
 
 3) There must be at least a space between <A> </A> for IE5.5 to see the
    anchor tag correctly. Do not do <A></A> with no space.
@@ -511,7 +511,7 @@ NOTES:
 
 2) Your anchor tag MUST contain both NAME and ID attributes which are the
    same. For example:
-   <A NAME="test" ID="test"> </A>
+   <A NAME="test.yaml" ID="test.yaml"> </A>
 
 3) There must be at least a space between <A> </A> for IE5.5 to see the
    anchor tag correctly. Do not do <A></A> with no space.

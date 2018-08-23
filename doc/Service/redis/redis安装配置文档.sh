@@ -234,7 +234,7 @@ redis-cli -p 6380 save  #指定端口
 redis-cli -r 3 info    # 重复执行info命令三次
 cat testStr.txt | redis-cli -x set testStr   # 读取testStr.txt文件所有内容设置为testStr的值
 redis-cli keys \*   # 查看所有键值信息
-redis-cli -n 1 keys "test*" | xargs redis-cli -n 1 del # 删除DBID为1的test开头的key值 
+redis-cli -n 1 keys "test.yaml*" | xargs redis-cli -n 1 del # 删除DBID为1的test开头的key值
 redis-cli -p 6379 info |  grep '\<used_memory\>'  # 过滤查询used_memory属性
 redis-check-dump  dump.rdb    # 检查本地数据库文件
 _____________________________________________________________________

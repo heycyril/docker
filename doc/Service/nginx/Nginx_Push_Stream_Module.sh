@@ -216,7 +216,7 @@ sudo make install
 sudo /usr/local/nginx/sbin/nginx -v  
 nginx version: nginx/1.0.5  
   
-# test configuration  
+# test.yaml configuration
 sudo /usr/local/nginx/sbin/nginx -c $NGINX_PUSH_STREAM_MODULE_PATH/misc/nginx.conf -t  
 the configuration file $NGINX_PUSH_STREAM_MODULE_PATH/misc/nginx.conf syntax is ok  
 configuration file $NGINX_PUSH_STREAM_MODULE_PATH/misc/nginx.conf test is successful  
@@ -245,7 +245,7 @@ sudo make install
 sudo /usr/local/nginx/sbin/nginx -v  
 nginx version: nginx/1.0.5  
   
-# test configuration  
+# test.yaml configuration
 sudo /usr/local/nginx/sbin/nginx -c $NGINX_PUSH_STREAM_MODULE_PATH/misc/nginx.conf -t  
 the configuration file $NGINX_PUSH_STREAM_MODULE_PATH/misc/nginx.conf syntax is ok  
 configuration file $NGINX_PUSH_STREAM_MODULE_PATH/misc/nginx.conf test is successful  

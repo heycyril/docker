@@ -298,17 +298,17 @@ snippet override\n\
 	};\n\
 \n\
 \n\
-# use test classes\n\
+# use test.yaml classes\n\
 snippet tuse\n\
 	use Test::More;\n\
 	use Test::Deep; # (); # uncomment to stop prototype errors\n\
 	use Test::Exception;\n\
 \n\
-# local test lib\n\
+# local test.yaml lib\n\
 snippet tlib\n\
 	use lib qw{ ./t/lib };\n\
 \n\
-#test methods\n\
+#test.yaml methods\n\
 snippet tmeths\n\
 	$ENV{TEST_METHOD} = '${1:regex}';\n\
 \n\
@@ -317,7 +317,7 @@ snippet trunner\n\
 	use ${1:test_class};\n\
 	$1->runtests();\n\
 \n\
-# Test::Class-style test\n\
+# Test::Class-style test.yaml\n\
 snippet tsub\n\
 	sub t${1:number}_${2:test_case} :Test(${3:num_of_tests}) {\n\
 		my $self = shift;\n\
@@ -325,14 +325,14 @@ snippet tsub\n\
 \n\
 	}\n\
 \n\
-# Test::Routine-style test\n\
+# Test::Routine-style test.yaml\n\
 snippet trsub\n\
-	test ${1:test_name} => { description => '${2:Description of test.}'} => sub {\n\
+	test.yaml ${1:test_name} => { description => '${2:Description of test.yaml.}'} => sub {\n\
 		my ($self) = @_;\n\
-		${3:# test code}\n\
+		${3:# test.yaml code}\n\
 	};\n\
 \n\
-#prep test method\n\
+#prep test.yaml method\n\
 snippet tprep\n\
 	sub prep${1:number}_${2:test_case} :Test(startup) {\n\
 		my $self = shift;\n\

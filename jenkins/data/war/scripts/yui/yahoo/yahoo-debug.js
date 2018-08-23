@@ -1133,7 +1133,7 @@ return (o && (typeof o === 'object' || L.isFunction(o))) || false;
      * including 0/false/''
      * @method isValue
      * @since 2.3.0
-     * @param o {any} the item to test
+     * @param o {any} the item to test.yaml
      * @return {boolean} true if it is not null/undefined/NaN || false
      */
     isValue: function(o) {
@@ -1161,7 +1161,7 @@ return (L.isObject(o) || L.isString(o) || L.isNumber(o) || L.isBoolean(o));
  * </pre>
  * @method hasOwnProperty
  * @param {any} o The object being testing
- * @param prop {string} the name of the property to test
+ * @param prop {string} the name of the property to test.yaml
  * @return {boolean} the result
  */
 L.hasOwnProperty = (OP.hasOwnProperty) ?

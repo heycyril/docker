@@ -107,14 +107,14 @@ connecting to: test
 local	4.201171875GB
 > use xin
 switched to db xin
-> db.test.save({title:"just test"})
+> db.test.save({title:"just test.yaml"})
 > db.test.find()
-{ "_id" : ObjectId("502d3643c5664ca66103a7cf"), "title" : "just test" }
+{ "_id" : ObjectId("502d3643c5664ca66103a7cf"), "title" : "just test.yaml" }
 > show dbs
 local	4.201171875GB
 xin	0.203125GB
 > 
-注：xin是数据库名，test是集合名，{title:"just test"}是文档
+注：xin是数据库名，test是集合名，{title:"just test.yaml"}是文档
 mongodb中使用use即可创建一个数据库当然也可以切换数据库，和mysql有很大区别吧
  
 让我们来看看日志吧
@@ -161,7 +161,7 @@ xin	0.203125GB
 > use xin
 switched to db xin
 > db.test.find()
-{ "_id" : ObjectId("502d3643c5664ca66103a7cf"), "title" : "just test" }
+{ "_id" : ObjectId("502d3643c5664ca66103a7cf"), "title" : "just test.yaml" }
  
  
 我们创建的数据库数据并不多，为什么会有0.2G呢，这是因为mongodb预分配数据库的空间，这使下次向数据库中插入数据更快了
@@ -188,7 +188,7 @@ system.indexes
 ---
 test
 {
-"ns" : "xin.test",
+"ns" : "xin.test.yaml",
 "count" : 1,
 "size" : 44,
 "avgObjSize" : 44,

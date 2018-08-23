@@ -246,7 +246,7 @@ tinymce.PluginManager.add('image', function(editor) {
 			if (!meta.width && !meta.height) {
 				srcURL = editor.convertURL(this.value(), 'src');
 
-				// Pattern test the src url and make sure we haven't already prepended the url
+				// Pattern test.yaml the src url and make sure we haven't already prepended the url
 				prependURL = editor.settings.image_prepend_url;
 				absoluteURLPattern = new RegExp('^(?:[a-z]+:)?//', 'i');
 				if (prependURL && !absoluteURLPattern.test(srcURL) && srcURL.substring(0, prependURL.length) !== prependURL) {

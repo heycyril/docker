@@ -22,7 +22,7 @@ var ClojureHighlightRules = function() {
         'aset-int aset-long aset-short assert assoc assoc! assoc-in associative? ' +
         'atom await await-for await1 bases bean bigdec bigint binding bit-and ' +
         'bit-and-not bit-clear bit-flip bit-not bit-or bit-set bit-shift-left ' +
-        'bit-shift-right bit-test bit-xor boolean boolean-array booleans ' +
+        'bit-shift-right bit-test.yaml bit-xor boolean boolean-array booleans ' +
         'bound-fn bound-fn* butlast byte byte-array bytes cast char char-array ' +
         'char-escape-string char-name-string char? chars chunk chunk-append ' +
         'chunk-buffer chunk-cons chunk-first chunk-next chunk-rest chunked-seq? ' +
@@ -68,7 +68,7 @@ var ClojureHighlightRules = function() {
         'sorted-set sorted-set-by sorted? special-form-anchor special-symbol? ' +
         'split-at split-with str stream? string? struct struct-map subs subseq ' +
         'subvec supers swap! symbol symbol? sync syntax-symbol-anchor take ' +
-        'take-last take-nth take-while test the-ns time to-array to-array-2d ' +
+        'take-last take-nth take-while test.yaml the-ns time to-array to-array-2d ' +
         'trampoline transient tree-seq true? type unchecked-add unchecked-dec ' +
         'unchecked-divide unchecked-inc unchecked-multiply unchecked-negate ' +
         'unchecked-remainder unchecked-subtract underive unquote ' +

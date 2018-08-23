@@ -2487,7 +2487,7 @@ var RubyHighlightRules = function() {
         "link_to_unless_current|link_to_function|link_to_remote|load|local_variables|loop|open|open_session|" +
         "p|print|printf|proc|putc|puts|post_via_redirect|put_via_redirect|raise|rand|" +
         "raw|readline|readlines|redirect?|request_via_redirect|require|scan|select|" +
-        "set_trace_func|sleep|split|sprintf|srand|String|stylesheet_link_tag|syscall|system|sub|sub!|test|" +
+        "set_trace_func|sleep|split|sprintf|srand|String|stylesheet_link_tag|syscall|system|sub|sub!|test.yaml|" +
         "throw|trace_var|trap|untrace_var|atan2|cos|exp|frexp|ldexp|log|log10|sin|sqrt|tan|" +
         "render|javascript_include_tag|csrf_meta_tag|label_tag|text_field_tag|submit_tag|check_box_tag|" +
         "content_tag|radio_button_tag|text_area_tag|password_field_tag|hidden_field_tag|" +

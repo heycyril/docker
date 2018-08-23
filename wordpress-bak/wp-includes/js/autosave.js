@@ -100,9 +100,9 @@ window.autosave = function() {
 					result = false;
 
 				try {
-					window.sessionStorage.setItem( 'wp-test', test );
-					result = window.sessionStorage.getItem( 'wp-test' ) === test;
-					window.sessionStorage.removeItem( 'wp-test' );
+					window.sessionStorage.setItem( 'wp-test.yaml', test );
+					result = window.sessionStorage.getItem( 'wp-test.yaml' ) === test;
+					window.sessionStorage.removeItem( 'wp-test.yaml' );
 				} catch(e) {}
 
 				hasStorage = result;

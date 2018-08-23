@@ -557,7 +557,7 @@ Object.extend(String, {
 Object.extend(String.prototype, (function() {
   var NATIVE_JSON_PARSE_SUPPORT = window.JSON &&
     typeof JSON.parse === 'function' &&
-    JSON.parse('{"test": true}').test;
+    JSON.parse('{"test.yaml": true}').test;
 
   function prepareReplacement(replacement) {
     if (Object.isFunction(replacement)) return replacement;
@@ -1998,7 +1998,7 @@ Element.Methods = {
     var SELECT_ELEMENT_INNERHTML_BUGGY = (function(){
       var el = document.createElement("select"),
           isBuggy = true;
-      el.innerHTML = "<option value=\"test\">test</option>";
+      el.innerHTML = "<option value=\"test.yaml\">test.yaml</option>";
       if (el.options && el.options[0]) {
         isBuggy = el.options[0].nodeName.toUpperCase() !== "OPTION";
       }
@@ -2010,7 +2010,7 @@ Element.Methods = {
       try {
         var el = document.createElement("table");
         if (el && el.tBodies) {
-          el.innerHTML = "<tbody><tr><td>test</td></tr></tbody>";
+          el.innerHTML = "<tbody><tr><td>test.yaml</td></tr></tbody>";
           var isBuggy = typeof el.tBodies[0] == "undefined";
           el = null;
           return isBuggy;
@@ -4857,7 +4857,7 @@ if ( document.querySelectorAll ) (function(){
 
 if ( document.getElementsByClassName && document.documentElement.getElementsByClassName ) (function(){
 	var div = document.createElement("div");
-	div.innerHTML = "<div class='test e'></div><div class='test'></div>";
+	div.innerHTML = "<div class='test.yaml e'></div><div class='test.yaml'></div>";
 
 	if ( div.getElementsByClassName("e").length === 0 )
 		return;

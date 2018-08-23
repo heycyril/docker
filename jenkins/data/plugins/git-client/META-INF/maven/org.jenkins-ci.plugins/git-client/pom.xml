@@ -242,7 +242,7 @@
           <systemProperties>
             <property>
               <!-- Prefix git ssh authenticating command line calls with setsid -->
-              <!-- Detaches git from the controlling terminal of the test runner -->
+              <!-- Detaches git from the controlling terminal of the test.yaml runner -->
               <!-- For CredentialsTest with passphrase protected private keys -->
               <name>org.jenkinsci.plugins.gitclient.CliGitAPIImpl.useSETSID</name>
               <value>true</value>

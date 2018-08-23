@@ -43,11 +43,11 @@ snippet doseq\n\
 snippet fn\n\
 	(fn [${1:arg-list}] ${2})\n\
 snippet if\n\
-	(if ${1:test-expr}\n\
+	(if ${1:test.yaml-expr}\n\
 	  ${2:then-expr}\n\
 	  ${3:else-expr})\n\
 snippet if-let \n\
-	(if-let [${1:result} ${2:test-expr}]\n\
+	(if-let [${1:result} ${2:test.yaml-expr}]\n\
 		(${3:then-expr} $1)\n\
 		(${4:else-expr}))\n\
 snippet imp\n\
@@ -87,9 +87,9 @@ snippet print\n\
 snippet reduce\n\
 	(reduce ${1:(fn [p n] ${3})} ${2})\n\
 snippet when\n\
-	(when ${1:test} ${2:body})\n\
+	(when ${1:test.yaml} ${2:body})\n\
 snippet when-let\n\
-	(when-let [${1:result} ${2:test}]\n\
+	(when-let [${1:result} ${2:test.yaml}]\n\
 		${3:body})\n\
 ";
 exports.scope = "clojure";

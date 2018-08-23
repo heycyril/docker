@@ -283,7 +283,7 @@
         </resources>
         <plugins>
             <plugin>
-                <!-- why is this necessary!? otherwise compiling src/test/groovy/ fails -->
+                <!-- why is this necessary!? otherwise compiling src/test.yaml/groovy/ fails -->
                 <!-- fix attempted at https://github.com/jenkinsci/jenkins/commit/101507f49873de0239ccb7839649ea71187712b2 but apparently failed. -->
                 <groupId>org.codehaus.gmaven</groupId>
                 <artifactId>gmaven-plugin</artifactId>

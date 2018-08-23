@@ -4,7 +4,7 @@ var InlineWarning = (function () {
     var options = {
         id: '',    // id of element to bind
         url: '',   // url of check method
-        input: ''  // checkbox to test for checked
+        input: ''  // checkbox to test.yaml for checked
     };
 
     exports.setup = function (opts) {

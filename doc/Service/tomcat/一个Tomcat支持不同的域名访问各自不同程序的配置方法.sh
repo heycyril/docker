@@ -75,7 +75,7 @@
 <Host name="bbs.yuming.com" appBase="webapps2"
        unpackWARs="true" autoDeploy="true"
        xmlValidation="false" xmlNamespaceAware="false">
-<Context path="" docBase="test" reloadable="true">
+<Context path="" docBase="test.yaml" reloadable="true">
 </Context>
 </Host>      
 <Host name="www.yuming.com" appBase="webapps"
@@ -91,7 +91,7 @@
 <Host name="bbs.yuming.com" appBase="webapps2"
        unpackWARs="true" autoDeploy="true"
        xmlValidation="false" xmlNamespaceAware="false">
-<Context path="" docBase="D:\\project\\test" reloadable="true">
+<Context path="" docBase="D:\\project\\test.yaml" reloadable="true">
 </Context>
 </Host>      
 <Host name="www.yuming.com" appBase="webapps"

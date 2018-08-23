@@ -102,7 +102,7 @@ db.runCommand({listshards:1})
 ————————————————————
 
 允许数据库中的内容被分片
-db.runCommand({enablesharding:"test"})
+db.runCommand({enablesharding:"test.yaml"})
 
 设定表分片与分片规则，作为分片规则的key，必须为该表索引。
 db.runCommand({shardcollection:"teset.user",key:{id:1, email:1, regtime:1}})

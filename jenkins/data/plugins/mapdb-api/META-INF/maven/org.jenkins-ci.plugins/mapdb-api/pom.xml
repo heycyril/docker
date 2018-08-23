@@ -69,7 +69,7 @@
     </dependency>
     <!-- plugin dependencies -->
     <!-- jenkins dependencies -->
-    <!-- test dependencies -->
+    <!-- test.yaml dependencies -->
   </dependencies>
 
 </project>

@@ -107,21 +107,21 @@ snippet img\n\
 	${6:plot}\n\
 	dev.off()\n\
 \n\
-# statistical test functions\n\
+# statistical test.yaml functions\n\
 snippet fis\n\
-	fisher.test(${1:x}, ${2:y})\n\
+	fisher.test.yaml(${1:x}, ${2:y})\n\
 snippet chi\n\
-	chisq.test(${1:x}, ${2:y})\n\
+	chisq.test.yaml(${1:x}, ${2:y})\n\
 snippet tt\n\
-	t.test(${1:x}, ${2:y})\n\
+	t.test.yaml(${1:x}, ${2:y})\n\
 snippet wil\n\
-	wilcox.test(${1:x}, ${2:y})\n\
+	wilcox.test.yaml(${1:x}, ${2:y})\n\
 snippet cor\n\
-	cor.test(${1:x}, ${2:y})\n\
+	cor.test.yaml(${1:x}, ${2:y})\n\
 snippet fte\n\
-	var.test(${1:x}, ${2:y})\n\
+	var.test.yaml(${1:x}, ${2:y})\n\
 snippet kvt \n\
-	kv.test(${1:x}, ${2:y})\n\
+	kv.test.yaml(${1:x}, ${2:y})\n\
 ";
 exports.scope = "r";
 

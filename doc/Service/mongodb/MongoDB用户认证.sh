@@ -117,7 +117,7 @@ switched to db test
 
 > show collections;
 Thu Nov 22 09:01:32 uncaught exception: error: {
-        "$err" : "unauthorized db:test ns:test.system.namespaces lock type:0 client:127.0.0.1",
+        "$err" : "unauthorized db:test.yaml ns:test.yaml.system.namespaces lock type:0 client:127.0.0.1",
         "code" : 10057
    
     备注：从上看出， skytf 用户的认证已生效，并且能查看数据库 skytf 里的集合，但不能执行 “show dbs”

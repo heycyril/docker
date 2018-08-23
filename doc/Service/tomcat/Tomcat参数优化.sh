@@ -1,21 +1,21 @@
-Tomcat²ÎÊýÓÅ»¯
+Tomcatï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½
 
 
 
-maxThreads  ¿Í»§ÇëÇó×î´óÏß³ÌÊý
-minSpareThreads    Tomcat³õÊ¼»¯Ê±´´½¨µÄ socket Ïß³ÌÊý
-maxSpareThreads   TomcatÁ¬½ÓÆ÷µÄ×î´ó¿ÕÏÐ socket Ïß³ÌÊý
-enableLookups      ÈôÉèÎªtrue, ÔòÖ§³ÖÓòÃû½âÎö£¬¿É°Ñ ip µØÖ·½âÎöÎªÖ÷»úÃû
-redirectPort        ÔÚÐèÒª»ùÓÚ°²È«Í¨µÀµÄ³¡ºÏ£¬°Ñ¿Í»§ÇëÇó×ª·¢µ½»ùÓÚSSL µÄ redirectPort ¶Ë¿Ú
-acceptAccount       ¼àÌý¶Ë¿Ú¶ÓÁÐ×î´óÊý£¬ÂúÁËÖ®ºó¿Í»§ÇëÇó»á±»¾Ü¾ø£¨²»ÄÜÐ¡ÓÚmaxSpareThreads  £©
-connectionTimeout   Á¬½Ó³¬Ê±
-minProcessors         ·þÎñÆ÷´´½¨Ê±µÄ×îÐ¡´¦ÀíÏß³ÌÊý
-maxProcessors        ·þÎñÆ÷Í¬Ê±×î´ó´¦ÀíÏß³ÌÊý
-URIEncoding    URLÍ³Ò»±àÂë
+maxThreads  ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½
+minSpareThreads    Tomcatï¿½ï¿½Ê¼ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ socket ï¿½ß³ï¿½ï¿½ï¿½
+maxSpareThreads   Tomcatï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ socket ï¿½ß³ï¿½ï¿½ï¿½
+enableLookups      ï¿½ï¿½ï¿½ï¿½Îªtrue, ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É°ï¿½ ip ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+redirectPort        ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ú°ï¿½È«Í¨ï¿½ï¿½ï¿½Ä³ï¿½ï¿½Ï£ï¿½ï¿½Ñ¿Í»ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SSL ï¿½ï¿½ redirectPort ï¿½Ë¿ï¿½
+acceptAccount       ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½á±»ï¿½Ü¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½maxSpareThreads  ï¿½ï¿½
+connectionTimeout   ï¿½ï¿½ï¿½Ó³ï¿½Ê±
+minProcessors         ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½
+maxProcessors        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¬Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½
+URIEncoding    URLÍ³Ò»ï¿½ï¿½ï¿½ï¿½
 
 
-ÆäÖÐºÍ×î´óÁ¬½ÓÊýÏà¹ØµÄ²ÎÊýÎªmaxProcessors ºÍ acceptCount ¡£Èç¹ûÒª¼Ó´ó²¢·¢Á¬½ÓÊý£¬Ó¦Í¬Ê±¼Ó´óÕâÁ½¸ö²ÎÊý¡£
-web serverÔÊÐíµÄ×î´óÁ¬½ÓÊý»¹ÊÜÖÆÓÚ²Ù×÷ÏµÍ³µÄÄÚºË²ÎÊýÉèÖÃ£¬Í¨³£ Windows ÊÇ 2000 ¸ö×óÓÒ£¬ Linux ÊÇ 1000 ¸ö×óÓÒ¡£
+ï¿½ï¿½ï¿½Ðºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ØµÄ²ï¿½ï¿½ï¿½ÎªmaxProcessors ï¿½ï¿½ acceptCount ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ó´ó²¢·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦Í¬Ê±ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+web serverï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ÚºË²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½Í¨ï¿½ï¿½ Windows ï¿½ï¿½ 2000 ï¿½ï¿½ï¿½ï¿½ï¿½Ò£ï¿½ Linux ï¿½ï¿½ 1000 ï¿½ï¿½ï¿½ï¿½ï¿½Ò¡ï¿½
 
 
 <Connector port="9027"   
@@ -50,16 +50,16 @@ disableUploadTimeout="true"/>
 	
 
 
-ÐéÄâÖ÷»ú(¶àÓòÃû°ó¶¨µ½Í¬Ò»IP)
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó¶¨µï¿½Í¬Ò»IP)
     <Host name="www.123.com"  appBase="webapps" 
-         unpackWARs="true" autoDeploy="true">      # name ÓòÃû  appBase ÐéÄâÖ÷»úÖ÷³ÌÐòÄ¿Â¼  
-        <Alias>www.456.com</Alias>                 # ÆäËûÓòÃû
-        <Context path ="" docBase ="/opt/tomcat/webapps1/test" debug ="0" reloadbale ="true" >         # warÎÄ¼þ½âÑ¹ºóÒÆ¶¯µ½docBaseÂ·¾¶ ·ÇwebappsÂ·¾¶ÏÂ
+         unpackWARs="true" autoDeploy="true">      # name ï¿½ï¿½ï¿½ï¿½  appBase ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼  
+        <Alias>www.456.com</Alias>                 # ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        <Context path ="" docBase ="/opt/tomcat/webapps1/test.yaml" debug ="0" reloadbale ="true" >         # warï¿½Ä¼ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½docBaseÂ·ï¿½ï¿½ ï¿½ï¿½webappsÂ·ï¿½ï¿½ï¿½ï¿½
 		</Context>
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
             prefix="localhost_access_log." suffix=".txt"
-            pattern="%h %l %u %t &quot;%r&quot; %s %b" />        # ÈÕÖ¾ÉèÖÃ
+            pattern="%h %l %u %t &quot;%r&quot; %s %b" />        # ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½
     </Host>
 	
-	#ÈÕÖ¾ÉèÖÃ
+	#ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½
 	prefix="localhost_access_log." suffix=".txt" pattern="%{X-Forwarded-For}i %h %l %u %t &quot;%r&quot; %s %b %{Referer}i %{User-Agent}i %D" />

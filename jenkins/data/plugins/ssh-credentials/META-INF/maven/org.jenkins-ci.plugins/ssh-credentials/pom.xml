@@ -98,7 +98,7 @@
       <version>2.1.0</version>
     </dependency>
     <!-- jenkins dependencies -->
-    <!-- test dependencies -->
+    <!-- test.yaml dependencies -->
     <dependency>
       <groupId>org.apache.sshd</groupId>
       <artifactId>sshd-core</artifactId>

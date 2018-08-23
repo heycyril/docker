@@ -21,7 +21,7 @@ snippet cremove\n\
 snippet ccatch\n\
 	<c:catch var=\"${1}\" />\n\
 snippet cif\n\
-	<c:if test=\"${${1}}\">\n\
+	<c:if test.yaml=\"${${1}}\">\n\
 		${2}\n\
 	</c:if>\n\
 snippet cchoose\n\
@@ -29,7 +29,7 @@ snippet cchoose\n\
 		${1}\n\
 	</c:choose>\n\
 snippet cwhen\n\
-	<c:when test=\"${${1}}\">\n\
+	<c:when test.yaml=\"${${1}}\">\n\
 		${2}\n\
 	</c:when>\n\
 snippet cother\n\

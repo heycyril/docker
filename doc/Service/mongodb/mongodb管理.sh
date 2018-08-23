@@ -98,7 +98,7 @@ show collections
 
 四、登录{
 
-#默认登录后打开 test 库
+#默认登录后打开 test.yaml 库
 ./mongo
 
 # 直接连接某个库 不存在则创建  启动认证需要指定对应库才可登录

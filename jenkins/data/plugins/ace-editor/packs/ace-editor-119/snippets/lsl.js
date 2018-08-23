@@ -630,7 +630,7 @@ snippet llListenControl\n\
 snippet llListenRemove\n\
 	llListenRemove(${1:integer handle});\n\
 snippet llListFindList\n\
-	llListFindList(${1:list src}, ${2:list test})\n\
+	llListFindList(${1:list src}, ${2:list test.yaml})\n\
 snippet llListInsertList\n\
 	llListInsertList(${1:list dest}, ${2:list src}, ${3:integer start})\n\
 snippet llListRandomize\n\

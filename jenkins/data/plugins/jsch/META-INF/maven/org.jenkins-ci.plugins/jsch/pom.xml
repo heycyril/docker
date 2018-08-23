@@ -84,7 +84,7 @@
             <version>${deps.ssh-credentials-plugin.version}</version>
         </dependency>
 
-        <!-- test dependencies -->
+        <!-- test.yaml dependencies -->
         <dependency>
             <groupId>org.apache.sshd</groupId>
             <artifactId>sshd-core</artifactId>
