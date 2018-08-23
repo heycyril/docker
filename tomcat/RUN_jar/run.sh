@@ -7,7 +7,7 @@
 docker build -t cyril/jardemo:0.1 .
 
 #等编译好后运行容器
-docker run -d --name jardemo -p 8989:8080 -d cyril/jardemo:0.1
+docker run -d --name jardemo -p 8989:8080 cyril/jardemo:0.1
 
 #查看运行状态
 docker ps
