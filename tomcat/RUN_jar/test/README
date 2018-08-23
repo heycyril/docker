@@ -1,0 +1,7 @@
+java -jar ./daemon_test-1.0.jar 
+
+if you unzip the java file
+
+run
+
+ java com.jd.cis.MyDaemon
