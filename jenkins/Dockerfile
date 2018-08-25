@@ -13,6 +13,17 @@ ARG agent_port=50000
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT ${agent_port}
 
+RUN wget http://apache-mirror.rbc.ru/pub/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+RUN tar xzvf apache-maven-3.3.9-bin.tar.gz
+RUN mv apache-maven-3.3.9 /usr/local/maven
+RUN rm -rf apache-maven-3.3.9-bin.tar.gz
+RUN rm -rf apache-maven-3.3.9
+RUN export PATH=/usr/local/maven/bin:$PATH
+RUN ln -s /usr/local/maven/bin/mvn /usr/local/bin/mvn
+#RUN ls -l /usr/local/bin
+RUN echo $PATH
+
+
 # Jenkins is run with user `jenkins`, uid = 1000
 # If you bind mount a volume from the host or a data container, 
 # ensure you use the same uid
@@ -73,3 +84,6 @@ ENTRYPOINT ["/bin/tini", "--", "/usr/local/bin/jenkins.sh"]
 # from a derived Dockerfile, can use `RUN plugins.sh active.txt` to setup /usr/share/jenkins/ref/plugins from a support bundle
 COPY plugins.sh /usr/local/bin/plugins.sh
 COPY install-plugins.sh /usr/local/bin/install-plugins.sh
+
+
+docker run  --name cyril-jenkins2 -p 8787:8080 -p 50009:50000 -u root -d --env JAVA_OPTS="-Xms256m -Xmx512m  -XX:MaxNewSize=256m"  gsy36559067/jenkins:2.92ts

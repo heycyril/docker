@@ -1,0 +1,29 @@
+FROM jenkinsci/jenkins:2.130-alpine
+USER root
+ARG dockerGid=999
+RUN echo "docker:x:${dockerGid}:jenkins" >> /etc/group
+# 安装 docker-compose
+RUN curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
+
+RUN wget http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.5.4/source/apache-maven-3.5.4-src.tar.gz
+RUN tar xzvf apache-maven-3.5.4-src.tar.gz
+RUN mv apache-maven-3.5.4 /usr/local/maven
+RUN rm -rf apache-maven-3.5.4-bin.tar.gz
+RUN rm -rf apache-maven-3.5.4
+RUN export PATH=/usr/local/maven/bin:$PATH
+RUN ln -s /usr/local/maven/bin/mvn /usr/local/bin/mvn
+#RUN ls -l /usr/local/bin
+RUN echo $PATH
+
+
+
+sudo docker run  --name cyril-jenkins3 \
+-p 8888:8080 -p 50010:50000 -u root -d \
+--env JAVA_OPTS="-Xms256m -Xmx512m  -XX:MaxNewSize=256m"  \
+-v /var/run/docker.sock:/var/run/docker.sock   \
+-v /usr/bin/docker:/usr/bin/docker  \
+-v `pwd`/data:/var/jenkins_home  \
+-v /usr/lib64/libltdl.so.7:/usr/lib/x86_64-linux-gnu/libltdl.so.7 \
+gsy36559067/jenkins:2.130
+
