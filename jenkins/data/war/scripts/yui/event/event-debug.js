@@ -1535,7 +1535,7 @@ if (!YAHOO.util.Event) {
              * tests to determine if the object is array-like.  It will also
              * fail if the object is an array, but is empty.
              * @method _isValidCollection
-             * @param o the object to test.yaml
+             * @param o the object to test
              * @return {boolean} true if the object is array-like and populated
              * @static
              * @private

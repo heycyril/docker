@@ -350,7 +350,7 @@ var Util = YAHOO.util,
 	/**
 	 * Fetches a storage constructor if it is available, otherwise returns NULL.
 	 * @method _getClass
-	 * @param fnClass {Function} Required. The storage constructor to test.yaml.
+	 * @param fnClass {Function} Required. The storage constructor to test.
 	 * @return {Function} An available storage constructor or NULL.
 	 * @private
 	 */

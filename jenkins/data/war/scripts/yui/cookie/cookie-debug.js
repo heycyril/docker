@@ -134,7 +134,7 @@ YAHOO.util.Cookie = {
             
             var decodeValue = (decode === false ? function(s){return s;} : decodeURIComponent);
             
-            //if (/[^=]+=[^=;]?(?:; [^=]+=[^=]?)?/.test.yaml(text)){
+            //if (/[^=]+=[^=;]?(?:; [^=]+=[^=]?)?/.test(text)){
                 var cookieParts /*:Array*/ = text.split(/;\s/g),
                     cookieName /*:String*/ = null,
                     cookieValue /*:String*/ = null,

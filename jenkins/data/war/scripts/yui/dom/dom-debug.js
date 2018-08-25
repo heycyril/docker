@@ -162,7 +162,7 @@ version: 2.9.0
                     
                     if (!value) {
                         computed = el[OWNER_DOCUMENT][DEFAULT_VIEW][GET_COMPUTED_STYLE](el, null);
-                        if (computed) { // test.yaml computed before touching for safari
+                        if (computed) { // test computed before touching for safari
                             value = computed[property];
                         }
                     }
@@ -509,7 +509,7 @@ version: 2.9.0
         /**
          * Determines whether an HTMLElement has the given className.
          * @method hasClass
-         * @param {String | HTMLElement | Array} el The element or collection to test.yaml
+         * @param {String | HTMLElement | Array} el The element or collection to test
          * @param {String | RegExp} className the class name to search for, or a regular
          * expression to match against
          * @return {Boolean | Array} A boolean value or array of boolean values
@@ -740,7 +740,7 @@ version: 2.9.0
         },
         
         /**
-         * Returns an array of HTMLElements that pass the test.yaml applied by supplied boolean method.
+         * Returns an array of HTMLElements that pass the test applied by supplied boolean method.
          * For optimized performance, include a tag and/or root node when possible.
          * Note: This method operates against a live collection, so modifying the 
          * collection in the callback (removing/appending nodes, etc.) will have
@@ -787,7 +787,7 @@ version: 2.9.0
         },
         
         /**
-         * Returns the first HTMLElement that passes the test.yaml applied by the supplied boolean method.
+         * Returns the first HTMLElement that passes the test applied by the supplied boolean method.
          * @method getElementBy
          * @param {Function} method - A boolean method for testing elements which receives the element as its only argument.
          * @param {String} tag (optional) The tag name of the elements being collected
@@ -892,7 +892,7 @@ version: 2.9.0
         },
 
        /**
-         * Returns the nearest ancestor that passes the test.yaml applied by supplied boolean method.
+         * Returns the nearest ancestor that passes the test applied by supplied boolean method.
          * For performance reasons, IDs are not accepted and argument validation omitted.
          * @method getAncestorBy
          * @param {HTMLElement} node The HTMLElement to use as the starting point 
@@ -907,7 +907,7 @@ version: 2.9.0
                 }
             } 
 
-            YAHOO.log('getAncestorBy returning null (no ancestor passed test.yaml)', 'error', 'Dom');
+            YAHOO.log('getAncestorBy returning null (no ancestor passed test)', 'error', 'Dom');
             return null;
         },
         
@@ -954,7 +954,7 @@ version: 2.9.0
          * Returns the nearest HTMLElement sibling if no method provided.
          * @method getPreviousSiblingBy
          * @param {HTMLElement} node The HTMLElement to use as the starting point 
-         * @param {Function} method A boolean function used to test.yaml siblings
+         * @param {Function} method A boolean function used to test siblings
          * that receives the sibling node being tested as its only argument
          * @return {Object} HTMLElement or null if not found
          */
@@ -990,7 +990,7 @@ version: 2.9.0
          * Returns the nearest HTMLElement sibling if no method provided.
          * @method getNextSiblingBy
          * @param {HTMLElement} node The HTMLElement to use as the starting point 
-         * @param {Function} method A boolean function used to test.yaml siblings
+         * @param {Function} method A boolean function used to test siblings
          * that receives the sibling node being tested as its only argument
          * @return {Object} HTMLElement or null if not found
          */
@@ -1021,10 +1021,10 @@ version: 2.9.0
         }, 
 
         /**
-         * Returns the first HTMLElement child that passes the test.yaml method.
+         * Returns the first HTMLElement child that passes the test method. 
          * @method getFirstChildBy
          * @param {HTMLElement} node The HTMLElement to use as the starting point 
-         * @param {Function} method A boolean function used to test.yaml children
+         * @param {Function} method A boolean function used to test children
          * that receives the node being tested as its only argument
          * @return {Object} HTMLElement or null if not found
          */
@@ -1049,10 +1049,10 @@ version: 2.9.0
         }, 
 
         /**
-         * Returns the last HTMLElement child that passes the test.yaml method.
+         * Returns the last HTMLElement child that passes the test method. 
          * @method getLastChildBy
          * @param {HTMLElement} node The HTMLElement to use as the starting point 
-         * @param {Function} method A boolean function used to test.yaml children
+         * @param {Function} method A boolean function used to test children
          * that receives the node being tested as its only argument
          * @return {Object} HTMLElement or null if not found
          */
@@ -1077,10 +1077,10 @@ version: 2.9.0
         }, 
 
         /**
-         * Returns an array of HTMLElement childNodes that pass the test.yaml method.
+         * Returns an array of HTMLElement childNodes that pass the test method. 
          * @method getChildrenBy
          * @param {HTMLElement} node The HTMLElement to start from
-         * @param {Function} method A boolean function used to test.yaml children
+         * @param {Function} method A boolean function used to test children
          * that receives the node being tested as its only argument
          * @return {Array} A static array of HTMLElements
          */
@@ -1092,7 +1092,7 @@ version: 2.9.0
                 if ( !method || method(node) ) {
                     children[children.length] = node;
                 }
-                return false; // fail test.yaml to collect all children
+                return false; // fail test to collect all children
             });
 
             return children;
@@ -1713,7 +1713,7 @@ var Y = YAHOO.util,
         */
         getVisibility: function(node, att) {
             var current;
-            while ( (current = node[CURRENT_STYLE]) && current[att] == 'inherit') { // NOTE: assignment in test.yaml
+            while ( (current = node[CURRENT_STYLE]) && current[att] == 'inherit') { // NOTE: assignment in test
                 node = node[PARENT_NODE];
             }
             return (current) ? current[att] : VISIBLE;

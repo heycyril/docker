@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <user>
-  <fullName>cyril</fullName>
+  <fullName>administrator</fullName>
   <properties>
     <jenkins.security.ApiTokenProperty>
-      <apiToken>{AQAAABAAAAAwFNwU4iduWKGBiw0wXplwHkzUymSqYuUJv4Kt4MObHPy56ETlJY6W3HTK4SfGgAaIkigeVpqg1vY4jR2sGY3jyQ==}</apiToken>
+      <apiToken>{AQAAABAAAAAwZ2d3UmAStHh3kH1bdoBgVQHGNd68gv0Ag2v/23gwD5XJSwuhkML3AEpZfSLGv5bIWyyJo83ySjyUKjhURRPqRQ==}</apiToken>
     </jenkins.security.ApiTokenProperty>
     <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.16">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
@@ -32,16 +32,16 @@
       <insensitiveSearch>true</insensitiveSearch>
     </hudson.search.UserSearchProperty>
     <hudson.security.HudsonPrivateSecurityRealm_-Details>
-      <passwordHash>#jbcrypt:$2a$10$OLBNkjmzBxHQLv/9w3g.AuUIbILzl12Yoa8j.FNJ/hvmKneT9ddZe</passwordHash>
+      <passwordHash>#jbcrypt:$2a$10$4p0gy6p/4gnrS3v/hThx8.lzpqvLPKCzlXFikq.2hXVmIu4i/A63u</passwordHash>
     </hudson.security.HudsonPrivateSecurityRealm_-Details>
     <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.20">
-      <emailAddress>cyril@netgit.cn</emailAddress>
+      <emailAddress>123456@qq.com</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
     <jenkins.security.LastGrantedAuthoritiesProperty>
       <roles>
         <string>authenticated</string>
       </roles>
-      <timestamp>1512006997373</timestamp>
+      <timestamp>1535170628149</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
   </properties>
 </user>
