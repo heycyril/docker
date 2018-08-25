@@ -661,7 +661,7 @@ TV.prototype = {
 
         // exception to handle deprecated event labelClick
         // @TODO take another look at this deprecation.  It is common for people to
-        // only be interested in the label click, so why make them have to test.yaml
+        // only be interested in the label click, so why make them have to test
         // the node type to figure out whether the click was on the label?
         target = Event.getTarget(ev);
         if (Dom.hasClass(target, node.labelStyle) || Dom.getAncestorByClassName(target,node.labelStyle)) {
@@ -1018,7 +1018,7 @@ TV.prototype = {
 
 
     /**
-     * Returns a collection of nodes that have passed the test.yaml function
+     * Returns a collection of nodes that have passed the test function
      * passed as its only argument.
      * The function will receive a reference to each node to be tested.
      * @method getNodesBy
@@ -1042,7 +1042,7 @@ TV.prototype = {
      * of the node, or null if it is not contained within any node
      * in this tree.
      * @method getNodeByElement
-     * @param el {HTMLElement} the element to test.yaml
+     * @param el {HTMLElement} the element to test
      * @return {YAHOO.widget.Node} a node reference or null
      */
     getNodeByElement: function(el) {

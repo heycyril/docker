@@ -30,7 +30,7 @@
 //
 
 if (window.isRunAsTest) {
-    // Disable postMessage when running in test.yaml mode (HtmlUnit).
+    // Disable postMessage when running in test mode (HtmlUnit).
     window.postMessage = false;
 }
 
@@ -1520,7 +1520,7 @@ function refreshPart(id,url) {
             });
         }
     };
-    // if run as test.yaml, just do it once and do it now to make sure it's working,
+    // if run as test, just do it once and do it now to make sure it's working,
     // but don't repeat.
     if(isRunAsTest) f();
     else intervalID = window.setInterval(f, 5000);

@@ -320,7 +320,7 @@ YAHOO.env.parseUA = function(agent) {
          * Webkit 212 nightly:   522+    <-- Safari 3.0 precursor (with native
          * SVG and many major issues fixed).
          * Safari 3.0.4 (523.12) 523.12  <-- First Tiger release - automatic
-         * update from 2.x via the 10.4.README.md OS patch.
+         * update from 2.x via the 10.4.11 OS patch.
          * Webkit nightly 1/2008:525+    <-- Supports DOMContentLoaded event.
          *                                   yahoo.com user agent hack removed.
          * </pre>
@@ -1133,7 +1133,7 @@ return (o && (typeof o === 'object' || L.isFunction(o))) || false;
      * including 0/false/''
      * @method isValue
      * @since 2.3.0
-     * @param o {any} the item to test.yaml
+     * @param o {any} the item to test
      * @return {boolean} true if it is not null/undefined/NaN || false
      */
     isValue: function(o) {
@@ -1161,7 +1161,7 @@ return (L.isObject(o) || L.isString(o) || L.isNumber(o) || L.isBoolean(o));
  * </pre>
  * @method hasOwnProperty
  * @param {any} o The object being testing
- * @param prop {string} the name of the property to test.yaml
+ * @param prop {string} the name of the property to test
  * @return {boolean} the result
  */
 L.hasOwnProperty = (OP.hasOwnProperty) ?

@@ -6191,7 +6191,7 @@ version: 2.9.0
         },
 
         /**
-         * This is the test.yaml method used by getFocusableElements, to determine which elements to
+         * This is the test method used by getFocusableElements, to determine which elements to 
          * include in the focusable elements list. Users may override this to customize behavior.
          *
          * @method _testIfFocusable
