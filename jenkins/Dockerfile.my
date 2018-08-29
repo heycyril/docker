@@ -16,14 +16,29 @@ RUN ln -s /usr/local/maven/bin/mvn /usr/local/bin/mvn
 #RUN ls -l /usr/local/bin
 RUN echo $PATH
 
-
-
-sudo docker run  --name cyril-jenkins3 \
--p 8888:8080 -p 50010:50000 -u root -d \
+sudo docker run  --name cyril-jenkins \
+-p 8282:8080 -p 50002:50000 -u root -d \
 --env JAVA_OPTS="-Xms256m -Xmx512m  -XX:MaxNewSize=256m"  \
 -v /var/run/docker.sock:/var/run/docker.sock   \
 -v /usr/bin/docker:/usr/bin/docker  \
 -v `pwd`/data:/var/jenkins_home  \
 -v /usr/lib64/libltdl.so.7:/usr/lib/x86_64-linux-gnu/libltdl.so.7 \
 gsy36559067/jenkins:2.130
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

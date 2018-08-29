@@ -1,0 +1,35 @@
+### portainer - Service define start
+portainer:
+    image: portainer/portainer
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /data/portainer:/data
+    - /data/portainer/certs:/certs
+    - /data/portainer/endpoints.json:/endpoints.json
+    ports:
+    - "3006:9000"
+    hostname: portainer
+    mem_limit: 1024M
+    restart: always
+    command: "--tlsverify --tlscacert /certs/ca.pem
+              --tlscert /certs/cert.pem
+              --tlskey /certs/key.pem
+              --logo http://p.i139.cn/p/c8999
+              --external-endpoints /endpoints.json"
+### portainer - Service define end
+
+
+
+
+docker run -d -p 9000:9000 \
+    --restart=always \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    --name prtainer-test \
+    portainer/portainer
+
+
+docker run -d \
+-p 9000:9000 \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v portainer_data:/data \
+portainer/portainer
