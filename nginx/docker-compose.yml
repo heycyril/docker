@@ -9,8 +9,9 @@ services:
       # 指定当前构建的Docker容器的volume挂在目录设置
       volumes:
          - /docker/docker/nginx/html:/usr/share/nginx/html 
-         - /docker/docker/nginx/nginx.vh.default.conf:/etc/nginx/conf.d/default.conf
-         - /docker/docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+         - /docker/docker/nginx/conf.d:/etc/nginx/conf.d
+         - /docker/docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+         - /docker/docker/nginx/log:/var/log/nginx
       # 指定当前构建的Docker容器对外开放的端口号映射
       ports:
          - "80:80"
